@@ -1,0 +1,67 @@
+h2 {
+	font-family: 'Raleway';
+	text-align: center;
+	font-weight: 300;
+	font-size: 28px;
+	text-transform: uppercase;
+}
+
+h1 {
+	font-family: 'Raleway';
+	text-align: center;
+	color: white;
+	font-weight: 100;
+	font-size: 36px;
+	text-transform: uppercase;
+}
+
+#interested {
+	color: white;
+}
+
+#details {
+	text-align: center;
+}
+
+#header {
+	width: 100%;
+	height: 530px;
+	position: relative;
+}
+
+#header-image {
+	position: absolute;
+	height: 530px;
+	right: 0;
+	left: 50%;
+	margin-left: -718px;
+	z-index: 0;
+}
+
+#logo {
+	z-index: 1;
+	position: absolute;
+	width: 400px;
+	top: 20px;
+	left: 50%;
+	margin-left: -185px;
+}
+
+.feature {
+	width: 300px;
+	padding-bottom: 25px;
+}
+
+#details {
+	margin: 50px 0;
+}
+
+#sponsors {
+	background-color: #271e30;
+	text-align: center;
+	padding: 50px 0;
+}
+
+.sponsor {
+	width: 200px;
+}
