@@ -189,3 +189,21 @@ ul, li {
 #mouse:hover {
 	background: url(../img/mouse2.png) 0 0 no-repeat;
 }
+
+.btn-xs {
+	font-size: 20px;
+}
+
+#facebook {
+	background-color: #3B5998;
+}
+
+#twitter {
+	background-color: #4099FF;
+}
+
+#facebook:hover, #twitter:hover {
+background-color: #f5f5f5;
+border-color: #61616b;
+color: #271e30;
+}
