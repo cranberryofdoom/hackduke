@@ -106,12 +106,13 @@ ul, li {
 }
 
 #details {
-	margin: 50px 0;
+	margin-top: 50px;
 }
 
 #sponsors {
 	text-align: center;
 	width: 100%;
+	margin-bottom: 50px;
 }
 
 .sponsor {
@@ -193,16 +194,34 @@ ul, li {
 	font-size: 20px;
 }
 
+#faq {
+	padding: 0 20px;
+	margin-bottom: 50px;
+}
+
+#social-media {
+	text-align: center;
+}
+
+.social-media {
+	display: inline-block;
+	margin: 25px 10px;
+	height: 64px;
+	width: 64px;
+}
+
 #facebook {
-	background-color: #3B5998;
+	background: url(../img/facebook.png) 0 0 no-repeat;
 }
 
 #twitter {
-	background-color: #4099FF;
+	background: url(../img/twitter.png) 0 0 no-repeat;
 }
 
-#facebook:hover, #twitter:hover {
-background-color: #f5f5f5;
-border-color: #61616b;
-color: #271e30;
+#facebook:hover {
+	background: url(../img/facebook-light.png) 0 0 no-repeat;
+}
+
+#twitter:hover {
+	background: url(../img/twitter-light.png) 0 0 no-repeat;
 }
