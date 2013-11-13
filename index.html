@@ -17,9 +17,37 @@
 	<script type="text/javascript" src="js/prefixfree.dynamicdom.min.js"></script>
 	<script type="text/javascript" src="js/prefixfree.jquery.js"></script>
 </head>
-<body>
+<body id="body">
 	<img id="logo" src="img/logo.svg">
 	<div class="container">
+		<div class="row" id="line-up">
+			<div class="col-xs-12">
+				<h2>Check Out What We Have Planned!</h2>
+			</div>
+			<img id="peek" src="img/peek.png">
+			<div id="board">
+				<div class="row">
+					<div class="col-sm-12 board-section">
+						<a class="board-link" href="http://hackduke.org/tentative-schedule.pdf">Tentative Schedule</a>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-6 board-section">
+						<a class="board-link" href="http://hackduke.org/crash-courses.pdf">Crash Courses</a>
+					</div>
+					<div class="col-sm-6 board-section">
+						<a class="board-link" href="http://hackduke.org/tech-talks.pdf">Tech Talks</a>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12 board-section">
+						<a class="board-link" href="http://hackduke.org/prizes.pdf">Prizes</a>
+					</div>
+				</div>
+			</div>
+			<a class="btn btn-lg btn-white" id="pumped" href="http://hackduke.org/get-pumped.html">Get Pumped</a>
+		</div>
+		<hr />
 		<div class="row" id="details">
 			<div class="col-lg-4 deets">
 				<h2>400+ students</h2>
@@ -67,7 +95,7 @@
 		</div>
 		<div class="row" id="cta">
 			<div class="col-xs-12">
-				<a class="btn btn-lg btn-white" id="register-link" href="http://hackduke.eventbrite.com/">Register Now</a>
+				<!-- <a class="btn btn-lg btn-white" id="register-link" href="http://hackduke.eventbrite.com/">Register Now</a> -->
 				<div id="social-media">
 					<a class="social-media" id="facebook" href="https://www.facebook.com/events/370051956458772/"></a>
 					<a class="social-media" id="twitter" href="https://twitter.com/hackduke"></a>
@@ -148,88 +176,93 @@
 				<div class="col-xs-12">
 					<h2>Check out our sponsors</h2>
 				</div>
-        <div class="row">
-          <div class="col-lg-6 col-md-6 col-sm-12">
-            <a href="http://www.ebay.com/"><img class="sponsor1" src="img/ebay.png"></a>
-          </div>
-          <div class="col-lg-6 col-md-6 col-sm-12">
-            <a href="http://milo.com/"><img class="sponsor1" src="img/milo.png"></a>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-6 col-md-6 col-sm-12">
-            <a href="https://colab.duke.edu/"><img class="sponsor1" src="img/colab.png"></a>
-          </div>
-          <div class="col-lg-6 col-md-6 col-sm-12">
-            <a href="http://epicgames.com/"><img class="sponsor1" src="img/epic-games.png"></a>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-6 col-md-6 col-sm-6">
-            <a href="http://www.intel.com/content/www/us/en/homepage.html"><img class="sponsor1" src="img/intel.png"></a>
-          </div>
-          <div class="col-lg-6 col-md-6 col-sm-6">
-            <a href="http://www.att.com/#fbid=Cf1AJzL3nox"><img class="sponsor2" src="img/att.png"></a>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-6 col-md-6 col-sm-6">
-            <a href="https://www.google.com/"><img class="sponsor2" src="img/google.png"></a>
-          </div>
-          <div class="col-lg-6 col-md-6 col-sm-6">
-            <a href="https://coinbase.com/"><img class="sponsor2" src="img/coinbase.png"></a>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 col-md-6 col-sm-6">
-            <a href="http://sendgrid.com/"><img class="sponsor3" src="img/sendgrid.png"></a>
-          </div>
-          <div class="col-lg-4 col-md-6 col-sm-6">
-            <a href="http://janestreet.com/"><img class="sponsor3" src="img/jane-street.png"></a>
-          </div>
-          <div class="col-lg-4 col-md-6 col-sm-6">
-            <a href="http://www.thielfellowship.org/"><img class="sponsor3" src="img/thiel.png"></a>
-          </div>
-          <div class="col-lg-4 col-md-6 col-sm-6">
-            <a href="http://www.qualcomm.com/"><img class="sponsor3" src="img/qualcomm.png"></a>
-          </div>
-          <div class="col-lg-4 col-md-6 col-sm-6">
-            <a href="http://www.cs.duke.edu/"><img class="sponsor3" src="img/cs.png"></a>
-          </div>
-          <div class="col-lg-4 col-md-6 col-sm-6">
-            <a href="https://www.coursera.org/"><img class="sponsor3" src="img/coursera.png"></a>
-          </div>
-          <div class="col-lg-4 col-md-6 col-sm-6">
-            <a href="http://www.khanacademy.org/"><img class="sponsor3" src="img/khan-academy.png"></a>
-          </div>
-          <div class="col-lg-4 col-md-6 col-sm-6">
-            <a href="http://www.greylock.com/"><img class="sponsor3" src="img/greylock.png"></a>
-          </div>
-          <div class="col-lg-4 col-md-6 col-sm-6">
-            <a href="http://www.microsoft.com/en-us/default.aspx"><img class="sponsor3" src="img/microsoft.png"></a>
-          </div>
-          <div class="col-lg-4 col-md-6 col-sm-6">
-            <a href="https://www.facebook.com/"><img class="sponsor3" src="img/fb.png"></a>
-          </div>
-          <div class="col-lg-4 col-md-6 col-sm-6">
-            <a href="http://www.palantir.com/"><img class="sponsor3" src="img/palantir-dark.png"></a>
-          </div>
-          <div class="col-lg-4 col-md-6 col-sm-6">
-            <a href="https://github.com/"><img class="sponsor3" src="img/github-dark.png"></a>
-          </div>
-          <div class="col-lg-4 col-md-6 col-sm-6">
-            <a href="https://www.sparkfun.com/"><img class="sponsor3" src="img/sparkfun.png"></a>
-          </div>
-          <div class="col-lg-4 col-md-6 col-sm-6">
-            <a href="http://appia.com/"><img class="sponsor3" src="img/appia.png"></a>
-          </div>
-          <div class="col-lg-4 col-md-6 col-sm-6">
-            <a href="http://electricimp.com/"><img class="sponsor3" src="img/electric-imp.png"></a>
-          </div>
-          <div class="col-lg-12 col-md-6 col-sm-6">
-            <a href="http://www.lob.com/"><img class="sponsor3" src="img/lob.png"></a>
-          </div>
-        </div>
+				<div class="row">
+					<div class="col-lg-6 col-md-6 col-sm-12">
+						<a href="http://www.ebay.com/"><img class="sponsor1" src="img/ebay.png"></a>
+					</div>
+					<div class="col-lg-6 col-md-6 col-sm-12">
+						<a href="http://milo.com/"><img class="sponsor1" src="img/milo.png"></a>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-6 col-md-6 col-sm-6">
+						<a href="http://www.intel.com/content/www/us/en/homepage.html"><img class="sponsor1" src="img/intel.png"></a>
+					</div>
+					<div class="col-lg-6 col-md-6 col-sm-12">
+						<a href="http://epicgames.com/"><img class="sponsor1" src="img/epic-games.png"></a>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-6 col-md-6 col-sm-12">
+						<a href="https://colab.duke.edu/"><img class="sponsor1" src="img/colab.png"></a>
+					</div>
+					<div class="col-lg-6 col-md-6 col-sm-6">
+						<a href="http://www.att.com/#fbid=Cf1AJzL3nox"><img class="sponsor2" src="img/att.png"></a>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-6 col-md-6 col-sm-6">
+						<a href="https://www.google.com/"><img class="sponsor2" src="img/google.png"></a>
+					</div>
+					<div class="col-lg-6 col-md-6 col-sm-6">
+						<a href="https://coinbase.com/"><img class="sponsor2" src="img/coinbase.png"></a>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-4 col-md-6 col-sm-6">
+						<a href="http://sendgrid.com/"><img class="sponsor3" src="img/sendgrid.png"></a>
+					</div>
+					<div class="col-lg-4 col-md-6 col-sm-6">
+						<a href="http://janestreet.com/"><img class="sponsor3" src="img/jane-street.png"></a>
+					</div>
+					<div class="col-lg-4 col-md-6 col-sm-6">
+						<a href="http://www.thielfellowship.org/"><img class="sponsor3" src="img/thiel.png"></a>
+					</div>
+					<div class="col-lg-4 col-md-6 col-sm-6">
+						<a href="http://www.qualcomm.com/"><img class="sponsor3" src="img/qualcomm.png"></a>
+					</div>
+					<div class="col-lg-4 col-md-6 col-sm-6">
+						<a href="http://www.cs.duke.edu/"><img class="sponsor3" src="img/cs.png"></a>
+					</div>
+					<div class="col-lg-4 col-md-6 col-sm-6">
+						<a href="https://www.coursera.org/"><img class="sponsor3" src="img/coursera.png"></a>
+					</div>
+					<div class="col-lg-4 col-md-6 col-sm-6">
+						<a href="http://www.khanacademy.org/"><img class="sponsor3" src="img/khan-academy.png"></a>
+					</div>
+					<div class="col-lg-4 col-md-6 col-sm-6">
+						<a href="http://www.greylock.com/"><img class="sponsor3" src="img/greylock.png"></a>
+					</div>
+					<div class="col-lg-4 col-md-6 col-sm-6">
+						<a href="http://www.microsoft.com/en-us/default.aspx"><img class="sponsor3" src="img/microsoft.png"></a>
+					</div>
+					<div class="col-lg-4 col-md-6 col-sm-6">
+						<a href="https://www.facebook.com/"><img class="sponsor3" src="img/fb.png"></a>
+					</div>
+					<div class="col-lg-4 col-md-6 col-sm-6">
+						<a href="http://www.palantir.com/"><img class="sponsor3" src="img/palantir-dark.png"></a>
+					</div>
+					<div class="col-lg-4 col-md-6 col-sm-6">
+						<a href="https://github.com/"><img class="sponsor3" src="img/github-dark.png"></a>
+					</div>
+					<div class="col-lg-4 col-md-6 col-sm-6">
+						<a href="https://www.sparkfun.com/"><img class="sponsor3" src="img/sparkfun.png"></a>
+					</div>
+					<div class="col-lg-4 col-md-6 col-sm-6">
+						<a href="http://appia.com/"><img class="sponsor3" src="img/appia.png"></a>
+					</div>
+					<div class="col-lg-4 col-md-6 col-sm-6">
+						<a href="http://electricimp.com/"><img class="sponsor3" src="img/electric-imp.png"></a>
+					</div>
+				</div>
+				<div class = "row">
+					<div class="col-lg-6 col-md-6 col-sm-6">
+						<a href="http://www.lob.com/"><img class="sponsor3" src="img/lob.png"></a>
+					</div>
+					<div class="col-lg-6 col-md-6 col-sm-6">
+						<a href="http://www.vidyo.com/"><img class="sponsor3" src="img/vidyo.png"></a>
+					</div>
+				</div>
 			</div>
 			<div class="col-lg-12" id="interested">
 				<a class="btn btn-lg btn-white" id="sponsor-link" href="http://hackduke.org/SponsorHackDuke.pdf">Get Involved</a>
@@ -257,39 +290,10 @@
 					<a href="http://www.didacube.org/"><img class="sponsor2" src="img/dida.png"></a>
 				</div>
 				<div class="col-lg-4 col-md-6 col-sm-6">
-					<a href=""><img class="sponsor2" src="img/esg.png"></a>
-        </div>
-			</div>
-			<div class="col-lg-12" id="interested">
-				<a class="btn btn-lg btn-white" id="sponsor-link" href="http://hackduke.org/SponsorHackDuke.pdf">Get Involved</a>
-			</div>
-		</div>
-		<hr />
-		<div id="partners">
-			<div class="row">
-				<div class="col-xs-12">
-					<h2>Partnered with</h2>
-				</div>
-				<div class="col-lg-4 col-md-6 col-sm-6">
-					<a href="http://entrepreneurship.duke.edu/"><img class="sponsor2" src="img/duke-ie.png"></a>
-				</div>
-				<div class="col-lg-4 col-md-6 col-sm-6">
-					<a href="https://colab.duke.edu/"><img class="sponsor2" src="img/colab.png"></a>
-				</div>
-				<div class="col-lg-4 col-md-6 col-sm-6">
-					<a href="https://www.facebook.com/pages/Duke-IEEE/120119234754369"><img class="sponsor2" src="img/ieee.png"></a>
-				</div>
-				<div class="col-lg-4 col-md-6 col-sm-6">
-					<a href="https://www.facebook.com/dukeincube"><img class="sponsor2" src="img/cube.png"></a>
-				</div>
-				<div class="col-lg-4 col-md-6 col-sm-6">
-					<a href="http://www.didacube.org/"><img class="sponsor2" src="img/dida.png"></a>
-				</div>
-				<div class="col-lg-4 col-md-6 col-sm-6">
-					<a href=""><img class="sponsor2" src="img/esg.png"></a>
+					<a href="http://smarthome.duke.edu/"><img class="sponsor2" src="img/smarthome.png"></a>
 				</div>
 				<div class="col-lg-12 col-md-6 col-sm-6">
-					<a href=""><img class="sponsor2" src="img/smarthome.png"></a>
+					<a href="http://esg.pratt.duke.edu/"><img class="sponsor2" src="img/esg.png"></a>
 				</div>
 			</div>
 		</div>

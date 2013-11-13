@@ -1,6 +1,10 @@
-body {
+#body {
 	background: url(../img/duke02.jpg) no-repeat center 55% fixed;
 	background-size: cover;
+}
+
+#nyan-body {
+	background-color: #004b92;
 }
 
 h1 {
@@ -48,7 +52,6 @@ ul, li {
 	border-radius: 4px;
 	margin-bottom: 200px;
 }
-
 
 #hackitty-div {
 	height: 200px;
@@ -185,6 +188,24 @@ ul, li {
 	100% {background-position: 0 -1250px; }
 }
 
+#nyan {
+	position: fixed;
+	margin: 100px auto 0;
+	height: 300px;
+	width: 1500px;
+	top: 450px;
+}
+
+.nyan {
+	animation: nyan-cycle .8s steps(6) infinite;
+	background: url(../img/nyan.png) 0 0 no-repeat;
+}
+
+@keyframes nyan-cycle {
+	0% {background-position: 0 0; }
+	100% {background-position: 0 -1800px; }
+}
+
 #mouse {
 	position: fixed;
 	bottom: 10px;
@@ -238,4 +259,61 @@ ul, li {
 
 #twitter:hover {
 	background: url(../img/twitter-light.png) 0 0 no-repeat;
+}
+
+#line-up {
+	text-align: center;
+	margin: 50px 0;
+	position: relative;
+}
+
+#board {
+
+	border: 15px solid #271e30;
+	background-image: url(../img/cork.png);
+	margin: 0 100px;
+	margin-top: 200px;
+	padding: 20px 0;
+}
+
+.board-link {
+	font-family: 'Raleway';
+	font-size: 26px;
+	font-weight: 700;
+	color: #271e30;
+}
+
+.board-link:hover {
+	text-decoration: none;
+}
+
+#peek {
+	position: absolute;
+	left: -104px;
+	right: 0;
+	top: 80px;
+	bottom: 0;
+	margin-left: 50%;
+	width: 208px;
+	height: 184px;
+}
+
+.board-section {
+	text-align: center;
+	padding: 20px;
+}
+
+@media (max-width: 649px) {
+	#peek {
+		display: none;
+	}
+
+	#board {
+		margin: 0 30px;
+		margin-top: 0px;
+	}
+}
+
+#pumped {
+	margin-top: 50px;
 }
