@@ -193,7 +193,7 @@ ul, li {
 	margin: 100px auto 0;
 	height: 300px;
 	width: 1500px;
-	top: 450px;
+	top: 300px;
 }
 
 .nyan {
@@ -289,12 +289,12 @@ ul, li {
 
 #peek {
 	position: absolute;
-	left: -104px;
+	left: -108px;
 	right: 0;
 	top: 80px;
 	bottom: 0;
 	margin-left: 50%;
-	width: 208px;
+	width: 216px;
 	height: 184px;
 }
 
@@ -316,4 +316,9 @@ ul, li {
 
 #pumped {
 	margin-top: 50px;
+}
+
+#nyan-logo {
+	width: 400px;
+	height: 400px;
 }
