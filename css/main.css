@@ -322,3 +322,8 @@ ul, li {
 	width: 400px;
 	height: 400px;
 }
+
+.board-content {
+	text-align: left;
+	padding: 0 20px;
+}
