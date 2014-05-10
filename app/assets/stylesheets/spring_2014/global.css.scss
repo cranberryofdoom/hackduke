@@ -157,6 +157,43 @@ li {
 	}
 }
 
+.image-center {
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+.banner-header {
+	background-color: $yellow;
+	color: $blue;
+	position: relative;
+	font-size: 18px;
+	font-weight: 500;
+	margin: 30px 90px;
+	&:before {
+		content: ' ';
+		position: absolute;
+		width: 30px;
+		height: 0;
+		left: -30px;
+		top: 4px;
+		border-width: 27px 10px;
+		border-style: solid;
+		border-color: darken($yellow, 10%) darken($yellow, 10%) darken($yellow, 10%) transparent;
+	}
+	&:after {
+		content: ' ';
+		position: absolute;
+		width: 30px;
+		height: 0;
+		right: -30px;
+		top: 4px;
+		border-width: 27px 10px;
+		border-style: solid;
+		border-color: darken($yellow, 10%) transparent darken($yellow, 10%) darken($yellow, 10%) ;
+	}
+}
+
 @media (max-width: 768px) {
 	.or {
 		display: block;

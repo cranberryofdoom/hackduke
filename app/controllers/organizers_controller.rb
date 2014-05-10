@@ -1,5 +1,5 @@
 class OrganizersController < ApplicationController
 	def index
-		@organizer = Organizers.all
+		@organizers = Organizer.all
 	end
 end

@@ -1,25 +1,23 @@
-<h1>Listing prizes</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @prizes.each do |prize| %>
-      <tr>
-        <td><%= link_to 'Show', prize %></td>
-        <td><%= link_to 'Edit', edit_prize_path(prize) %></td>
-        <td><%= link_to 'Destroy', prize, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Prize', new_prize_path %>
+<div class="frame-light">
+  <div class="container content">
+    <h1>Prizes</h1>
+    <div class="row prizes">
+      <h2 class="text-center banner-header">Grand Prize Track Winners</h2>
+    </div>
+    <div class="row prizes">
+      <h2 class="text-center banner-header">Grand Prize Track Winners</h2>
+    </div>
+    <div class="row prizes">
+      <h2 class="text-center banner-header">Company Sponsored Prizes</h2>
+      <% @prizes.each do |p| %>
+      <div class="col-sm-6">
+        <a href="<%= p.sponsor.link_url %>">
+          <img class="sponsor-img-small image-center" src="sponsors/<%= p.sponsor.image_url %>">
+        </a>
+        <h3 class="text-center"><%= p.title %></h3>
+        <div><%= p.html_content.html_safe %></div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

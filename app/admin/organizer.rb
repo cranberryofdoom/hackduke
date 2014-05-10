@@ -8,9 +8,9 @@ ActiveAdmin.register Organizer do
 
   form do |f|
     f.inputs do
-      f.input :name
-      f.input :image_url
-      f.input :admin
+      f.input :name, :hint => "Use first name only"
+      f.input :image_url, :hint => "Use 'first name'.png"
+      f.input :admin, :as => :check_boxes, :hint => "Check 'yes' if adding a contributor who isn't a student"
       f.input :semesters, :as => :check_boxes
     end
     f.actions

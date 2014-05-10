@@ -1,42 +1,40 @@
 ActiveAdmin.register Prize do
 
 # permit all params, including nested ones
-  controller do
-    def permitted_params
-      params.permit!
-    end
+controller do
+  def permitted_params
+    params.permit!
   end
+end
 
-  form do |f|
-    f.inputs do
-      f.input :title
-      f.input :description
-      f.input :sponsors, :as => :select
-      f.input :semesters, :as => :select
-    end
-    f.actions
+form do |f|
+  f.inputs do
+    f.input :title
   end
-  
-  index do
-    column :title
-    column :description
-    column :sponsor
-    column :semesters do |s|
-      ss = s.semesters.map { |e| ([e.season, e.year.year]).join(' ')  }
-      ss.join(', ')
-    end
-    default_actions
+  f.inputs "Description &nbsp;&nbsp;(use <a href='http://daringfireball.net/projects/markdown/syntax'>markdown</a>)" do
+    f.input :markdown_content, :label => "Description", :as => :pagedown_text
   end
+  f.inputs do
+    f.input :sponsor, :as => :select
+    f.input :semester, :as => :select
+  end
+  f.actions
+end
 
-  show do
-    attributes_table do
-      row :title
-      row :description
-      row :sponsor
-      row :semesters do |s|
-        ss = s.semesters.map { |e| ([e.season, e.year.year]).join(' ')  }
-        ss.join(', ')
-      end    
-    end
+index do
+  column :title
+  column :markdown_content
+  column :sponsor
+  column :semester
+  default_actions
+end
+
+show do
+  attributes_table do
+    row :title
+    row :markdown_content
+    row :sponsor
+    row :semester
   end
+end
 end
