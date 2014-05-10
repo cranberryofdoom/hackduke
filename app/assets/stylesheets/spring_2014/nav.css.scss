@@ -1,0 +1,80 @@
+nav {
+	background-color: $black !important;
+	border-color: transparent !important;
+	#logo {
+		padding-right: 25px;
+		padding-left: 25px;
+	}
+	.navbar-header {
+		position: relative;
+		button {
+			position: absolute;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			margin: 20px;
+			&:hover, &:focus {
+				background-color: lighten($black, 10%) !important;
+			} 
+		}
+	}
+	#nav {
+		ul {
+			li {
+				height: 100%;
+				padding: 25px;
+				a {
+					text-transform: uppercase;
+					font-weight: 300;
+					font-size: 20px;
+					line-height: 1.5em;
+					padding: 0;
+					color: $yellow;
+				}
+			}
+		}
+	}
+}
+
+#logo {
+	img {
+		height: 50px;
+	}
+}
+
+@media (max-width: 1450px) {
+	.navbar-header {
+		float: none;
+	}
+	.navbar-collapse.collapse {
+		display: none !important;
+	}
+
+	.navbar-collapse {
+		border-top: 1px solid #e7e7e7;
+	}
+
+	.navbar-nav > li {
+		float: none;
+	}
+	.navbar-toggle {
+		display: inline;
+	}
+}
+
+.open {
+	a {
+		background-color: transparent !important;
+	}
+}
+
+.dropdown-menu {
+	background-color: $black;
+	li {
+		padding: 15px !important;
+		a {
+			text-transform: capitalize !important;
+			font-size: 16px !important;
+		}
+	}
+}

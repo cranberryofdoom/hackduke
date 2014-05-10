@@ -1,0 +1,112 @@
+#wonder-woman {
+	img {
+		display: block;
+		width: 25%;
+		margin: auto;
+		margin-top: 50px;
+	}
+}
+
+#about {
+	h3 {
+		padding-top: 20px;
+		padding-bottom: 30px;
+	}
+	#signup-container {
+		padding: 0 40px;
+	}
+	padding-bottom: 50px;
+	.row {
+		img {
+			width: 100%;
+		}
+	}
+}
+
+.image {
+	padding: 10px 15px 15px 15px;
+}
+
+.mission-unit {
+	padding: 10px 0;
+	height: 100%;
+	.mission {
+		height: 100%;
+	}
+}
+
+.number {
+	font-size: 165px;
+	color: $yellow;
+	text-shadow:
+	3px 3px 0 $black,
+	1px 1px 0 $black;
+	font-weight: 900;
+	display: inline-block;
+	height: 100%;
+}
+
+.blurb-wrapper {
+	padding-right: 30px;
+	position: relative;
+	height: 235px;
+	.blurb {
+		@include vertical-align;
+		color: $black;
+		.blurb-header {
+			color: $blue;
+			font-weight: 900;
+			font-size: 25px;
+			text-transform: uppercase;
+			text-shadow:
+			1px 1px 0 $yellow,
+			1px 1px 0 $yellow;
+		}
+		.blurb-body {
+			margin-top: 10px;
+			display: inline-block;
+		}
+	}
+}
+
+#social-media {
+	text-align: center;
+	margin-top: 40px;
+}
+
+.social-media {
+	display: inline-block;
+	margin: 0 20px;
+	height: 64px;
+	width: 64px;
+}
+
+#facebook {
+	background: url(../facebook.png) 0 0 no-repeat;
+	&:hover {
+		opacity: 0.7;
+	}
+}
+
+#twitter {
+	background: url(../twitter.png) 0 0 no-repeat;
+	&:hover {
+		opacity: 0.7;
+	}
+}
+
+.team-image {
+	border-radius: 50%;
+	width: 150px;
+	height: 150px;
+	margin: auto;
+	display: block;
+}
+
+.team-member {
+	margin-bottom: 40px;
+}
+
+.team {
+	margin: 40px 0;
+}
