@@ -1,2 +1,5 @@
-class OrganizersController < InheritedResources::Base
+class OrganizersController < ApplicationController
+	def index
+		@organizer = Organizers.all
+	end
 end
