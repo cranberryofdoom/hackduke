@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140510201246) do
+ActiveRecord::Schema.define(version: 20140511152252) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -53,11 +53,18 @@ ActiveRecord::Schema.define(version: 20140510201246) do
     t.time     "start_time"
     t.time     "end_time"
     t.integer  "semester_id"
+    t.string   "register_url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "courses", ["semester_id"], name: "index_courses_on_semester_id"
+  create_table "courses_instructors", force: true do |t|
+    t.integer "course_id"
+    t.integer "instructor_id"
+  end
+
+  add_index "courses_instructors", ["course_id"], name: "index_courses_instructors_on_course_id"
+  add_index "courses_instructors", ["instructor_id"], name: "index_courses_instructors_on_instructor_id"
 
   create_table "events", force: true do |t|
     t.string   "name"
@@ -95,8 +102,6 @@ ActiveRecord::Schema.define(version: 20140510201246) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "instructors", ["course_id"], name: "index_instructors_on_course_id"
 
   create_table "maps", force: true do |t|
     t.string   "name"
@@ -145,6 +150,14 @@ ActiveRecord::Schema.define(version: 20140510201246) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "partners_prizes", force: true do |t|
+    t.integer "partner_id"
+    t.integer "prize_id"
+  end
+
+  add_index "partners_prizes", ["partner_id"], name: "index_partners_prizes_on_partner_id"
+  add_index "partners_prizes", ["prize_id"], name: "index_partners_prizes_on_prize_id"
 
   create_table "partners_semesters", force: true do |t|
     t.integer "semester_id"

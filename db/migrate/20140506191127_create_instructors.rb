@@ -6,6 +6,5 @@ class CreateInstructors < ActiveRecord::Migration
     	t.integer :course_id
       t.timestamps
     end
-    add_index :instructors, :course_id
   end
 end

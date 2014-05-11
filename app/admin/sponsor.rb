@@ -22,8 +22,7 @@ ActiveAdmin.register Sponsor do
     column :image_url
     column :link_url
     column :semesters do |s|
-      ss = s.semesters.map { |e| ([e.season, e.year.year]).join(' ')  }
-      ss.join(', ')
+      (s.semesters.map { |e| ([e.season, e.year.year]).join(' ')  }).join(', ')
     end
     default_actions
   end
@@ -34,8 +33,7 @@ ActiveAdmin.register Sponsor do
       row :image_url
       row :link_url
       row :semesters do |s|
-        ss = s.semesters.map { |e| ([e.season, e.year.year]).join(' ')  }
-        ss.join(', ')
+        (s.semesters.map { |e| ([e.season, e.year.year]).join(' ')  }).join(', ')
       end    
     end
   end

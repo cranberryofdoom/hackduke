@@ -10,7 +10,7 @@ ActiveAdmin.register Partner do
   form do |f|
     f.inputs do
       f.input :name
-      f.input :image_url
+      f.input :image_url, :hint => "Use 'partner_name'.png and make sure the image file is in the public/partners folder"
       f.input :link_url
       f.input :partnership_type, :as => :select, :collection => ["University Partner", "Non-Profit Partner"]
       f.input :semesters, :as => :check_boxes
@@ -24,8 +24,7 @@ ActiveAdmin.register Partner do
     column :link_url
     column :partnership_type
     column :semesters do |s|
-      ss = s.semesters.map { |e| ([e.season, e.year.year]).join(' ')  }
-      ss.join(', ')
+      (s.semesters.map { |e| ([e.season, e.year.year]).join(' ') }).join(' , ')
     end
     default_actions
   end
@@ -37,8 +36,7 @@ ActiveAdmin.register Partner do
       row :link_url
       row :partnership_type
       row :semesters do |s|
-        ss = s.semesters.map { |e| ([e.season, e.year.year]).join(' ')  }
-        ss.join(', ')
+        (s.semesters.map { |e| ([e.season, e.year.year]).join(' ') }).join(', ')
       end    
     end
   end

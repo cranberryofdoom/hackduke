@@ -22,8 +22,7 @@ ActiveAdmin.register Faq do
     column :question
     column :markdown_content
     column :semesters do |s|
-      ss = s.semesters.map { |e| ([e.season, e.year.year]).join(' ')  }
-      ss.join(', ')
+      (s.semesters.map { |e| ([e.season, e.year.year]).join(' ')  }).join(', ')
     end
     default_actions
   end
@@ -33,8 +32,8 @@ ActiveAdmin.register Faq do
       row :question
       row :markdown_content
       row :semesters do |s|
-        ss = s.semesters.map { |e| ([e.season, e.year.year]).join(' ')  }
-        ss.join(', ')
+        (s.semesters.map { |e| ([e.season, e.year.year]).join(' ')  }).join(', ')
+        
       end    
     end
   end 
