@@ -3,7 +3,7 @@ class CreateMentors < ActiveRecord::Migration
 		create_table :mentors do |t|
 			t.string :name
 			t.string :image_url
-			t.string :bio
+			t.text :bio
 			t.integer :partner_id
 			t.integer :sponsor_id
 			t.timestamps

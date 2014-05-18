@@ -1,5 +1,9 @@
 Hackduke::Application.routes.draw do
   
+  resources :media
+
+  resources :winners
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
