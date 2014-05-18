@@ -23,6 +23,8 @@ Hackduke::Application.routes.draw do
 
   root to: 'static#index'
 
+  get '/our-mentors', to: 'mentors#our_mentors'
+  get '/our-experts', to: 'mentors#our_experts'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

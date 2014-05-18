@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140511152252) do
+ActiveRecord::Schema.define(version: 20140517234419) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -116,15 +116,24 @@ ActiveRecord::Schema.define(version: 20140511152252) do
   create_table "mentors", force: true do |t|
     t.string   "name"
     t.string   "image_url"
-    t.string   "bio"
+    t.string   "markdown_content"
     t.integer  "partner_id"
     t.integer  "sponsor_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "html_content"
   end
 
   add_index "mentors", ["partner_id"], name: "index_mentors_on_partner_id"
   add_index "mentors", ["sponsor_id"], name: "index_mentors_on_sponsor_id"
+
+  create_table "mentors_semesters", force: true do |t|
+    t.integer "mentor_id"
+    t.integer "semester_id"
+  end
+
+  add_index "mentors_semesters", ["mentor_id"], name: "index_mentors_semesters_on_mentor_id"
+  add_index "mentors_semesters", ["semester_id"], name: "index_mentors_semesters_on_semester_id"
 
   create_table "organizers", force: true do |t|
     t.string   "name"

@@ -1,0 +1,21 @@
+<div class="frame-light">
+	<div class="container content">
+		<h1>Meet Our Non-Profit Experts</h1>
+		<div class="row">
+			<% @experts.each do |e| %>
+			<% if Sponsor.exists?(e.partner) %>
+			<div class="col-sm-4">
+				<a data-toggle="collapse" data-target="#<%= e.name.gsub(" ", "_") %>">
+					<img class="profile-img img-hover" src="mentors/<%= e.image_url %>">
+					<h3 class="text-center"><%= m.name %></h3>
+				</a>
+				<img class="sponsor-img-small image-center" src="sponsors/<%= e.sponsor.image_url %>">
+				<div class="collapse" id="<%= e.name.gsub(" ", "_") %>">
+					<%= e.html_content.html_safe %>
+				</div>
+			</div>
+			<% end %>
+			<% end %>
+		</div>
+	</div>
+</div>

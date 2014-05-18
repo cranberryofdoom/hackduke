@@ -221,3 +221,18 @@ li {
 		width: 100% !important;
 	}
 }
+
+.profile-img {
+	display: block;
+	margin: auto;
+	padding: 10px;
+	border-radius: 50%;
+	width: 150px;
+	height: 150px;
+}
+
+.img-hover {
+	&:hover {
+		opacity: 0.7;
+	}
+}

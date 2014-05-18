@@ -6,5 +6,4 @@ class Course < ActiveRecord::Base
 
 	#validations
 	validates :title, presence: true
-	validates :description, presence: true
 end

@@ -29,7 +29,7 @@ ActiveAdmin.register Course do
     column :end_time
     column :register_url
     column :instructors do |i|
-      (i.instructors.map { |e| ([e.season, e.year.year]).join(' ')  }).join(', ')
+      (i.instructors.map { |e| e.name }).join(', ')
     end
     column :semester
     default_actions
@@ -44,7 +44,7 @@ ActiveAdmin.register Course do
       row :end_time
       row :register_url
       row :instructors do |i|
-        (i.instructors.map { |e| ([e.season, e.year.year]).join(' ')  }).join(', ')
+        (i.instructors.map { |e| e.name }).join(', ')
       end
       row :semester
     end
