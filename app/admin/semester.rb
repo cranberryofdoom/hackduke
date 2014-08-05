@@ -9,7 +9,7 @@ ActiveAdmin.register Semester do
 
   form do |f|
     f.inputs do
-      f.input :season
+      f.input :season, :as => :select, :collection => ["Fall", "Spring"]
       f.input :year, :as => :date_select, :discard_day => true, :discard_month => true
     end
     f.actions
