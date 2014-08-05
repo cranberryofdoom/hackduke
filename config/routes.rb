@@ -29,6 +29,7 @@ Hackduke::Application.routes.draw do
 
   get '/our-mentors', to: 'mentors#our_mentors'
   get '/our-experts', to: 'mentors#our_experts'
+  get '/teamApply', to: 'static#team_apply'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

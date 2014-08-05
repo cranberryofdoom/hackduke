@@ -1,0 +1,188 @@
+/* Space out content a bit */
+
+.form-body {
+  background-image:url('apply_background.png');
+  background-color:#cccccc;
+  background-size: 100%;
+  background-repeat: repeat-y;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header-apply,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Custom page header */
+
+/* Make the masthead heading the same height as the navigation */
+.header-apply h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+  padding-bottom: 19px;
+  padding-top: 40px;
+}
+
+.header-apply h1 {
+  margin-top: 0px;
+  background-color:  #1f242a;
+  line-height: 50px;
+}
+.header-h1-container {
+  padding-top: 30px;
+  display: block;
+  width:90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+/* Customize container */
+@media (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+}
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+}
+.marketing p + h4 {
+  margin-top: 28px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  /* Remove the padding we set earlier */
+  .header-apply,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Space out the masthead */
+  .header {
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
+
+.apply-form,
+.containerCssClass,
+.dropdownCssClass {
+  font-family: 'Raleway', sans-serif !important;
+  font-size: 18px;
+}
+
+.header-apply {
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+
+}
+
+.descriptor {
+  font-size: 15px;
+}
+
+input[type="text"].apply-form,
+input[type="email"].apply-form {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  text-align: center;
+}
+
+textarea.apply-form {
+  width: 100%;
+  height: 120px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+
+}
+
+.red-color {
+  color: red;
+}
+
+.error {
+  color: red;
+  font-size: 15px;
+}
+
+.select-center {
+  margin: 0 auto;
+  width: 20%;
+}
+
+.select2-custom {
+  width: 100%;
+}
+.center-elements {
+  display: block;
+  padding: 10px;
+  text-align: center;
+}
+
+.header-apply h3 { 
+  padding: 0px;
+}
+
+.header-apply {
+  padding-bottom: 20px;
+  background-color: #2a3139;
+  color: white;
+  margin-top: 100px;
+}
+.apply-black,
+.apply-black label,
+.apply-black input {
+  color: black;
+  font-weight: 300;
+}
+
+.form-div
+ {
+  display: block;
+  border-width: 1px;
+  border-radius: 8px;
+  width: 100%;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.85); 
+ }
+
+ .container {
+  padding-top: 50px;
+  padding-bottom: 50px;
+ }
+
+ .submit-button {
+  margin: 0 auto;
+  width: 20%;
+  padding: 10px;
+ }
+ .pure-button {
+  width: 100%;
+ }
+
+ .apply-subheader h3{
+  color: white;
+  font-weight: 300;
+ }

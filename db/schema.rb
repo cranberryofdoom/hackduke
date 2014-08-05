@@ -222,13 +222,4 @@ ActiveRecord::Schema.define(version: 20140518215906) do
     t.datetime "updated_at"
   end
 
-  create_table "winners", force: true do |t|
-    t.string  "team_members"
-    t.string  "project"
-    t.string  "link_url"
-    t.integer "semester_id"
-  end
-
-  add_index "winners", ["semester_id"], name: "index_winners_on_semester_id"
-
 end
