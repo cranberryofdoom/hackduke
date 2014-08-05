@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140805073747) do
+ActiveRecord::Schema.define(version: 20140805081336) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -113,7 +113,7 @@ ActiveRecord::Schema.define(version: 20140805073747) do
 
   add_index "maps", ["semester_id"], name: "index_maps_on_semester_id"
 
-  create_table "medias", force: true do |t|
+  create_table "media", force: true do |t|
     t.string  "title"
     t.string  "link_url"
     t.string  "media_type"
@@ -121,7 +121,7 @@ ActiveRecord::Schema.define(version: 20140805073747) do
     t.integer "semester_id"
   end
 
-  add_index "medias", ["semester_id"], name: "index_medias_on_semester_id"
+  add_index "media", ["semester_id"], name: "index_media_on_semester_id"
 
   create_table "mentors", force: true do |t|
     t.string   "name"
