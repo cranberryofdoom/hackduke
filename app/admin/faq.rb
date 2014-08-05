@@ -33,7 +33,6 @@ ActiveAdmin.register Faq do
       row :markdown_content
       row :semesters do |s|
         (s.semesters.map { |e| ([e.season, e.year.year]).join(' ')  }).join(', ')
-        
       end    
     end
   end 

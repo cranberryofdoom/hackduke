@@ -24,7 +24,6 @@ ActiveAdmin.register Mentor do
   index do
     column :name
     column :image_url
-    column :markdown_content
     column :sponsor
     column :partner
     column :semesters do |s|
@@ -36,10 +35,10 @@ ActiveAdmin.register Mentor do
   show do
     attributes_table do
       row :name
-      row :image_url  
-      row :markdown_content
-      row :sponsor
+      row :image_url
       row :partner
+      row :sponsor
+      row :markdown_content
       row :semesters do |s|
         (s.semesters.map { |e| ([e.season, e.year.year]).join(' ')  }).join(', ')
       end

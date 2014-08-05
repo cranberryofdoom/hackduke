@@ -9,9 +9,17 @@
 					<img class="profile-img img-hover" src="mentors/<%= e.image_url %>">
 					<h3 class="text-center"><%= e.name %></h3>
 				</a>
-				<img class="sponsor-img-small image-center" src="partners/<%= e.partner.image_url %>">
+				<p class="text-center"><strong>Track: </strong><%= e.partner.track %></p>
+				<p class="text-center"><strong>Focus: </strong><%= e.partner.focus %></p>
 				<div class="collapse" id="<%= e.name.gsub(" ", "_") %>">
 					<%= e.html_content.html_safe %>
+				</div>
+				<img class="sponsor-img-small image-center" src="partners/<%= e.partner.image_url %>">
+				<h2 data-toggle="collapse" data-target="#<%= e.partner.name.gsub(" ", "_") %>" class="text-center banner-header">Challenges <span class="caret"></span></h2>
+				<div class="collapse" id="<%= e.partner.name.gsub(" ", "_") %>">
+					<p class="text-center"><strong>About <%= e.partner.name %></strong></p>
+					<p><%= e.partner.about %></p>
+					<div><%= e.partner.html_content.html_safe %></div>
 				</div>
 			</div>
 			<% end %>

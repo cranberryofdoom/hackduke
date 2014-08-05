@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140518215906) do
+ActiveRecord::Schema.define(version: 20140805073747) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -168,6 +168,11 @@ ActiveRecord::Schema.define(version: 20140518215906) do
     t.string   "partnership_type"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "track"
+    t.string   "focus"
+    t.text     "about"
+    t.text     "html_content"
+    t.text     "markdown_content"
   end
 
   create_table "partners_prizes", force: true do |t|
@@ -221,5 +226,14 @@ ActiveRecord::Schema.define(version: 20140518215906) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "winners", force: true do |t|
+    t.string  "team_members"
+    t.string  "project"
+    t.string  "link_url"
+    t.integer "semester_id"
+  end
+
+  add_index "winners", ["semester_id"], name: "index_winners_on_semester_id"
 
 end
