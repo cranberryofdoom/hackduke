@@ -2,28 +2,29 @@ Hackduke::Application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+  constraints subdomain: 'www' do
+    get '/', to: 'spring2014/static#index'
 
-  root to: 'spring2014/static#index'
+    get '/gist', to: 'spring2014/static#gist'
+    get '/apply-team', to: 'spring2014/widgets#apply_team'
+    get '/our-mentors', to: 'spring2014/mentors#our_mentors'
+    get '/our-experts', to: 'spring2014/mentors#our_experts'
+    get '/brainstorm', to: 'spring2014/events#brainstorm'
+    get '/tech-talks', to: 'spring2014/events#tech_talks'
 
-  get '/gist', to: 'spring2014/static#gist'
-  get '/apply-team', to: 'spring2014/widgets#apply_team'
-  get '/our-mentors', to: 'spring2014/mentors#our_mentors'
-  get '/our-experts', to: 'spring2014/mentors#our_experts'
-  get '/brainstorm', to: 'spring2014/events#brainstorm'
-  get '/tech-talks', to: 'spring2014/events#tech_talks'
-
-  namespace :spring2014 do
-    resources :mentors, only: [:index]
-    resources :events, only: [:index]
-    resources :media, only: [:index]
-    resources :winners, only: [:index]
-    resources :maps, only: [:index]
-    resources :courses, only: [:index]
-    resources :prizes, only: [:index]
-    resources :faqs, only: [:index]
-    resources :partners, only: [:index]
-    resources :sponsors, only: [:index]
-    resources :organizers, only: [:index]
+    namespace :spring2014 do
+      resources :mentors, only: [:index]
+      resources :events, only: [:index]
+      resources :media, only: [:index]
+      resources :winners, only: [:index]
+      resources :maps, only: [:index]
+      resources :courses, only: [:index]
+      resources :prizes, only: [:index]
+      resources :faqs, only: [:index]
+      resources :partners, only: [:index]
+      resources :sponsors, only: [:index]
+      resources :organizers, only: [:index]
+    end
   end
 
   constraints subdomain: 'spring2014' do
