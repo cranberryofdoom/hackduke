@@ -3,4 +3,4 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require turbolinks
-//= require angular/application-files
+//= require angular-application

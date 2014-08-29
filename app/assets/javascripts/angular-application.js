@@ -1,5 +1,5 @@
 //= require_self
-//= require_tree ./angular/application
+//= require angular/application-files
 
 angular
   .module('applyHackdukeApp', [
