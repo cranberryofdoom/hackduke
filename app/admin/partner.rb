@@ -10,7 +10,7 @@ ActiveAdmin.register Partner do
   form do |f|
     f.inputs do
       f.input :name
-      f.input :image_url, :hint => "Use 'partner_name'.png and make sure the image file is in the public/partners folder"
+      f.input :image_url, :hint => "Use 'partner-name'.png and make sure the image file is in the public/partners folder"
       f.input :link_url
       f.input :focus
       f.input :track

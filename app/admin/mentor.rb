@@ -10,7 +10,7 @@ ActiveAdmin.register Mentor do
   form do |f|
     f.inputs do
       f.input :name
-      f.input :image_url, :hint => "Use 'first_name'.png and make sure the image file is in the public/mentors folder"
+      f.input :image_url, :hint => "Use 'first-name-last-name'.png and make sure the image file is in the public/mentors folder"
       f.input :partner, :hint => "Choose a partner or a sponsor"
       f.input :sponsor, :hint => "Choose a sponsor or a partner"
       f.input :semesters, :as => :check_boxes

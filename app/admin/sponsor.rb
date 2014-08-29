@@ -10,7 +10,7 @@ ActiveAdmin.register Sponsor do
   form do |f|
     f.inputs do
       f.input :name
-      f.input :image_url, :hint => "Use 'company_name'.png and make sure the image file is in the public/sponsors folder"
+      f.input :image_url, :hint => "Use 'company-name'.png and make sure the image file is in the public/sponsors folder"
       f.input :link_url
       f.input :semesters, :as => :check_boxes
     end

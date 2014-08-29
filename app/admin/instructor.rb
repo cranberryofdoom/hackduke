@@ -10,7 +10,7 @@ ActiveAdmin.register Instructor do
   form do |f|
     f.inputs do
       f.input :name
-      f.input :image_url, :hint => "Use 'first_name'.png and make sure the image file is in the public/instructors folder"
+      f.input :image_url, :hint => "Use 'first-name-last-name'.png and make sure the image file is in the public/instructors folder"
       f.input :courses, :as => :check_boxes
     end
     f.actions
