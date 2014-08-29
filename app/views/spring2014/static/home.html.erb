@@ -1,0 +1,97 @@
+<div class="frame-light" id="home">
+  <div id="home-badge">
+    <%= image_tag "spring2014/badge.svg" %>
+  </div>
+  <div id="batgirl">
+    <%= image_tag "spring2014/batgirl.svg" %>
+  </div>
+  <div id="register">
+    <h3 class="text-center">Check out our winners!</h3>
+    <div id="signup-container" class="row">
+    </div>
+    <div class="arrow-down"></div>
+  </div>
+</div>
+<div class="frame-dark">
+  <div class="container content">
+    <h1>In collaboration with</h1>
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-6">
+        <a href="https://kenan.ethics.duke.edu/"><img class="sponsor-img image-center" src="spring2014/kenan.png"></a>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-6">
+        <a href="https://kenan.ethics.duke.edu/"><img class="sponsor-img image-center" src="spring2014/team-kenan.png"></a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="frame-light" id="about">
+  <div class="container content">
+    <h1>HackDuke is about</h1>
+    <%= render "about" %>
+    <div id="wonder-woman">
+      <%= image_tag "spring2014/wonder-woman.svg" %>
+    </div>
+  </div>
+</div>
+<div class="frame-dark" id="faq">
+  <div class="container content">
+    <h1>FAQ</h1>
+    <div class="row">
+      <% Faq.all.each do |f| %>
+      <% if f.match?("Spring", 2014) %>
+      <%= render f %>
+      <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div id="supergirl">
+    <%= image_tag "spring2014/supergirl.svg" %>
+  </div>
+</div>
+<div class="frame-light" id="mentors">
+  <div class="container content">
+    <h1>Mentors</h1>
+    <div class="row">
+      <% Partner.all.each do |p| %>
+      <% if p.match?("Spring", 2014) && p.partnership_type == "Non-Profit Partner" %>
+      <%= render p %>
+      <% end %>
+      <% end %>
+    </div>
+    <div class="cta-wrapper">
+      <h1>This sounds awesome! I want to</h1>
+      <div class="btn-wrapper clearfix">
+        <a class="btn cta-2 pull-left" href="/mentor-guidelines">Learn about mentorship</a><p class="or">OR</p><a class="btn cta-2 pull-right" href="mailto:philanthropy@hackduke.org">Become a mentor</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="frame-dark" id="sponsors">
+  <div class="container content">
+    <h1>Sponsors</h1>
+    <div class="row">
+      <% Sponsor.all.each do |s| %>
+      <%= render s %>
+      <% end %>
+    </div>
+    <div class="cta-wrapper">
+      <h1>This sounds awesome! I want to</h1>
+      <div class="btn-wrapper clearfix">
+        <a class="btn cta-2 pull-left" href="/sponsor-faq">Learn about sponsorship</a><p class="or">OR</p><a class="btn cta-2 pull-right" href="mailto:sponsorship@hackduke.org">Become a sponsor</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="frame-light" id="partners">
+  <div class="container content">
+    <h1>Partners</h1>
+    <div class="row">
+      <% Partner.all.each do |p| %>
+      <% if p.match?("Spring", 2014) && p.partnership_type == "University Partner" %>
+      <%= render p %>
+      <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

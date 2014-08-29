@@ -1,0 +1,106 @@
+<div ng-app="hackDukeApp">
+<div class="apply-black">
+  <div class="header-apply">
+    <div class="header-h1-container">
+      <h1>hackDuke New Members Application</h1>
+    </div>
+    <div class="apply-subheader">
+      <h3>Interested in joining the organizing team of hackDuke?</h3>
+      <h3>hackDuke: Fall 2014 is underway but we need your help!</h3>
+    </div>
+  </div>
+
+<div class="form-body">
+
+  <div class="container">
+    <div ng-controller="teamApplyCtrl" class="form-div">
+      <form id="top" name="applyFormObject.hackDukeForm" class="pure-form pure-form-stacked apply-form" novalidate>
+
+        <label class="center-elements" for="name"><span>Name<span class="red-color">*</span><span>
+        <span class="red-color" ng-show="applyFormObject.hackDukeForm.nameInput.$invalid && showError">Required</span>
+
+        </label class="center-elements">
+        <input class="apply-form" name="nameInput" ng-model="applyForm.name" type="text" placeholder="Your name" required>
+
+        <label class="center-elements" for="netId">
+        netID
+        <span class="red-color">*</span>
+        <span class="red-color" ng-show="applyFormObject.hackDukeForm.netId.$invalid && showError">Required</span>
+        </label>
+        <input class="apply-form" name="netId" ng-model="applyForm.netId" type="text" placeholder="Your netid" required>
+
+        <label class="center-elements" for="emailInput">Non-Duke Email</label>
+        <span class="error" ng-show="applyFormObject.hackDukeForm.emailInput.$invalid && showError">Not valid email!</span>
+        <input ng-model-onblur id="emailInput" class="apply-form" name="emailInput" ng-model="applyForm.email" type="email" placeholder="A non-duke email">
+        
+
+        <label class="center-elements" for="phoneNumber">Cell Phone Number</label>
+        <input class="apply-form" id="phoneNumber" ng-model="applyForm.phoneNumber" placeholder="Your Phone Number" type="text">
+
+        <label class="center-elements" for="gradYear">
+          Graduation Year
+          <span class="red-color">*</span>
+           <span class="red-color" ng-show="applyFormObject.hackDukeForm.graduationYear.$invalid && showError">Required</span>
+        </label>
+        <div class="select-center">
+          <select ui-select2 class="apply-form select2-custom" name="graduationYear" data-placeholder="Your class" ng-model="applyForm.graduationYear" id="gradYear" required>
+              <option value=""></option>
+              <option value="2015">2015</option>
+              <option value="2016">2016</option>
+              <option value="2017">2017</option>
+              <option value="2018">2018</option>
+          </select>
+        </div>
+        <label class="center-elements" for="experience">Hackathon Experience</label>
+        <span class="descriptor center-elements">If you've been to hackathons previously, where have you been and what did you build? Include links to these projects if possible</span>
+        <textarea class="apply-form" ng-model="applyForm.experience"></textarea>  
+
+        <label class="center-elements" for="projects">Projects &amp; Leadership</label>
+        <span class="descriptor center-elements">Tell us about projects and experiences (in and out of Duke) that you are proud of</span>
+        <textarea class="apply-form" ng-model="applyForm.projects"></textarea>
+
+        <label class="center-elements" for="division">
+          Which parts of hackDuke are you interested in?
+          <span class="red-color">*</span>
+          <div>
+            <span class="red-color" ng-show="noCheckedBox() && showError">Please select at least one option</span>
+          </div>
+          
+        </label>
+        <span class="descriptor">We'd love to know what you're interested to work on at hackDuke so that we can match you up with the right people</span>
+
+          <label class="center-elements" for="marketing" class="pure-checkbox">
+            <input id="marketing" ng-model="applyForm.marketing" type="checkbox" value="">
+            Marketing
+          </label>
+
+          <label class="center-elements" for="logistics" class="pure-checkbox">
+            <input id="logistics" ng-model="applyForm.logistics" type="checkbox" value="">
+            Logistics
+          </label>
+          <label class="center-elements" for="applications" class="pure-checkbox">
+              <input id="applications" ng-model="applyForm.applications" type="checkbox" value="">
+            Applications
+          </label>
+          <label class="center-elements" for="sponsorship" class="pure-checkbox">
+            <input id="sponsorship" ng-model="applyForm.sponsorship" type="checkbox" value="">
+            Sponsorship
+          </label>
+          <label class="center-elements" for="programmes" class="pure-checkbox">
+            <input id="programmes" ng-model="applyForm.programmes" type="checkbox" value="">
+            Programs
+          </label>
+
+          <label class="center-elements" for="division">Your ideas for hackDuke</label>
+          <span class="center-elements descriptor">If you have any ideas on improving hackDuke as an organization or on how we can create a better hackathon experience, we'd love to hear them!</span>
+          <textarea class="apply-form" ng-model="applyForm.ideas"></textarea>  
+          
+          <div class="submit-button">
+            <button ng-click="submit()" class="pure-button pure-button-primary">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
