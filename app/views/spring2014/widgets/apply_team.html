@@ -6,7 +6,7 @@
       <form class="form-horizontal" role="form" name="applyFormObject.hackDukeForm" novalidate>
        <div class="form-group">
         <label class="col-sm-2 control-label" for="name">Name<span class="text-danger">*</span></label>
-        <span ng-show="applyFormObject.hackDukeForm.nameInput.$invalid && showError">Required</span>
+        <span class="text-danger" ng-show="applyFormObject.hackDukeForm.nameInput.$invalid && showError">Required</span>
         <div class="col-sm-10">
           <input class="form-control" name="nameInput" ng-model="applyForm.name" type="text" placeholder="Your name" required>
         </div>
