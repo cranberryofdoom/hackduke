@@ -175,7 +175,6 @@ ActiveRecord::Schema.define(version: 20140805085640) do
     t.text     "about"
     t.text     "html_content"
     t.text     "markdown_content"
-    t.string   "prize_description"
   end
 
   create_table "partners_prizes", force: true do |t|
@@ -236,6 +235,7 @@ ActiveRecord::Schema.define(version: 20140805085640) do
     t.string  "link_url"
     t.integer "semester_id"
     t.string  "prize_type"
+    t.string  "prize_description"
   end
 
   add_index "winners", ["semester_id"], name: "index_winners_on_semester_id"

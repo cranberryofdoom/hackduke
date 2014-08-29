@@ -1,2 +1,3 @@
-class Spring2014::WinnersController < InheritedResources::Base
+class Spring2014::WinnersController < ApplicationController
+	layout 'spring2014'
 end

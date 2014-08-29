@@ -1,10 +1,8 @@
 class Spring2014::StaticController < ApplicationController
+	layout 'spring2014'
+
 	def index
 		render 'home'
-	end
-
-	def team_apply
-		render 'team_apply'
 	end
 
 	def gist
