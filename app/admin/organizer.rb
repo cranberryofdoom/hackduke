@@ -10,7 +10,7 @@ ActiveAdmin.register Organizer do
   form do |f|
     f.inputs do
       f.input :name, :hint => "Use first name only"
-      f.input :image_url, :hint => "Use 'first_name'.png and make sure the image file is in the public/organizers folder"
+      f.input :image_url, :hint => "Use 'first-name-last-name'.png and make sure the image file is in the public/organizers folder"
       f.input :admin, :hint => "Check 'yes' if adding a contributor who isn't a student"
       f.input :semesters, :as => :check_boxes
     end

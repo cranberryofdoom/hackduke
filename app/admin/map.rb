@@ -10,7 +10,7 @@ ActiveAdmin.register Map do
   form do |f|
     f.inputs do
       f.input :name
-      f.input :image_url, :hint => "Use 'map_name'.png and make sure the image file is in the public/maps folder"
+      f.input :image_url, :hint => "Use 'map-name'.png and make sure the image file is in the public/maps folder"
       f.input :semester, :as => :select
     end
     f.actions
