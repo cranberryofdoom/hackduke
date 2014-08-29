@@ -1,4 +1,6 @@
 //= require ./angular
+//= require ./angular-resource
+//= require ./angular-ui-bootstrap
 //= require ./json3
 //= require ./select2
 //= require ./angular-ui-select/select2

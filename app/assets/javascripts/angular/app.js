@@ -1,4 +1,6 @@
 angular
   .module('hackDukeApp', [
-    'ui.select2'
+    'ngResource',
+    'ui.select2',
+    'ui.bootstrap'
   ]);
