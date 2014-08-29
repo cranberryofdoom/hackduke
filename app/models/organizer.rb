@@ -9,5 +9,4 @@ class Organizer < ActiveRecord::Base
 	#validations
 	validates :name, presence: true
 	validates :image_url, presence: true
-	validates :admin, presence: true
 end

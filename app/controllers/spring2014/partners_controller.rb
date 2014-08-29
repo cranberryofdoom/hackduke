@@ -1,4 +1,4 @@
-class PartnersController < ApplicationController
+class Spring2014::PartnersController < ApplicationController
   before_action :set_partner, only: [:show, :edit, :update, :destroy]
 
   # GET /partners

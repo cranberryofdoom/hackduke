@@ -1,35 +1,36 @@
 Hackduke::Application.routes.draw do
-  
-  resources :media
-
-  resources :winners
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
-  resources :mentors
+  constraints subdomain: 'spring2014' do
+    namespace :spring2014, path: '/' do
+      root to: 'static#index'
+      
+      get '/gist', to: 'static#gist'
+    
+      resources :mentors
+      get '/our-mentors', to: 'mentors#our_mentors'
+      get '/our-experts', to: 'mentors#our_experts'
 
-  resources :organizers
+      resources :events
+      get '/brainstorm', to: 'events#brainstorm'
+      get '/tech-talks', to: 'events#tech_talks'
 
-  resources :events
+      resources :media
+      resources :winners
+      resources :maps
+      resources :courses
+      resources :prizes
+      resources :faqs
+      resources :partners
+      resources :sponsors
+      resources :organizers
+    end
+  end
 
-  resources :maps
-
-  resources :courses
-
-  resources :prizes
-
-  resources :faqs
-
-  resources :partners
-
-  resources :sponsors
-
-  root to: 'static#index'
-
-  get '/our-mentors', to: 'mentors#our_mentors'
-  get '/our-experts', to: 'mentors#our_experts'
   get '/teamApply', to: 'static#team_apply'
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

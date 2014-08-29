@@ -1,4 +1,4 @@
-class MentorsController < InheritedResources::Base
+class Spring2014::MentorsController < InheritedResources::Base
 	def our_mentors
 		@mentors = Mentor.all
 	end
