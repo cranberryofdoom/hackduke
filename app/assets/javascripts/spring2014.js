@@ -4,3 +4,4 @@
 //= require bootstrap
 //= require turbolinks
 //= require angular-application
+//= require active_admin

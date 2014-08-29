@@ -1,1 +1,1 @@
-#= require ./active_admin_custom
+//= require ./active_admin_custom
