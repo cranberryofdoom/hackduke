@@ -1,3 +1,3 @@
-
-//= require ./angular/application-files
+#= jquery
+#= require ./angular/application-files
 

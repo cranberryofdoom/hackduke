@@ -118,10 +118,10 @@ ActiveAdmin.setup do |config|
   # This allows your users to comment on any resource registered with Active Admin.
   #
   # You can completely disable comments:
-  config.allow_comments = false
+  config.allow_comments = true
   #
   # You can disable the menu item for the comments index page:
-  config.show_comments_in_menu = false
+  config.show_comments_in_menu = true
   #
   # You can change the name under which comments are registered:
   # config.comments_registration_name = 'AdminComment'
@@ -168,7 +168,7 @@ ActiveAdmin.setup do |config|
   #   config.register_stylesheet 'my_print_stylesheet.css', :media => :print
   #
   # To load a javascript file:
-  #   config.register_javascript 'my_javascript.js'
+  config.register_javascript 'active_admin.js'
 
 
   # == CSV options
