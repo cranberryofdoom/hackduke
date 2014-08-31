@@ -23,6 +23,16 @@ html, body {
 	background-color: white;
 }
 
+a {
+	color: $blue;
+	font-weight: 700;
+	&:hover {
+		font-weight: 700;
+		color: lighten($blue, 20%);
+		text-decoration: none;
+	}
+}
+
 p {
 	font-family: "Raleway";
 	padding: 10px 20px;
