@@ -10,7 +10,7 @@
       <div class="col-sm-4">
         <h3 class="text-center"><%= p.title %></h3>
         <div><%= p.html_content.html_safe %></div>
-        <strong>Who can I donate to?</strong>
+        <p><strong>Who can I donate to?</strong></p>
         <% p.partners.each do |pp| %>
         <a href="<%= pp.link_url %>"><img class="image-center partner-img" src="partners/<%= pp.image_url %>"></a>
         <% end %>

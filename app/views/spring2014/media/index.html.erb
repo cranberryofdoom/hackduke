@@ -7,7 +7,7 @@
 			</div>
 			<% @articles.each do |a| %>
 			<% if a.semester.season == "Spring" && a.semester.year.year == 2014 %>
-			<div class="col-lg-4 text-center">
+			<div class="col-lg-6 text-center">
 				<h3><a href="<%= a.link_url %>" title=""><%= a.title %></a></h3>
 			</div>
 			<% end %>
@@ -20,7 +20,6 @@
 			<% @galleries.each do |g| %>
 			<% if g.semester.season == "Spring" && g.semester.year.year == 2014 %>
 			<div class="col-md-6 text-center">
-				<%= g.title %>
 				<%= g.iframe_html.html_safe %>
 			</div>
 			<% end %>
@@ -32,8 +31,7 @@
 			</div>
 			<% @videos.each do |v| %>
 			<% if v.semester.season == "Spring" && v.semester.year.year == 2014 %>
-			<div class="col-md-6">
-				<%= v.title %>
+			<div class="col-xs-12 text-center">
 				<%= v.iframe_html.html_safe %>
 			</div>
 			<% end %>
