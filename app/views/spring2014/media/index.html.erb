@@ -19,7 +19,7 @@
 			</div>
 			<% @galleries.each do |g| %>
 			<% if g.semester.season == "Spring" && g.semester.year.year == 2014 %>
-			<div class="col-md-6 text-center">
+			<div class="col-md-6 text-center gallery">
 				<%= g.iframe_html.html_safe %>
 			</div>
 			<% end %>
