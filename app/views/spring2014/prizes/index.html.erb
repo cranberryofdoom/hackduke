@@ -10,6 +10,7 @@
       <div class="col-sm-4">
         <h3 class="text-center"><%= p.title %></h3>
         <div><%= p.html_content.html_safe %></div>
+        <strong>Who can I donate to?</strong>
         <% p.partners.each do |pp| %>
         <a href="<%= pp.link_url %>"><img class="image-center partner-img" src="partners/<%= pp.image_url %>"></a>
         <% end %>
@@ -18,47 +19,28 @@
       <% end %>
     </div>
     <div class="row prizes">
-      <div class="col-sm-6">
-        <p class="text-center"><strong>
-          All grand prizes recieve support from Indiegogo, where teams will be able to take their projects to the next level.
-        </strong></p>
-        <img class="sponsor-img image-center" src="sponsors/indiegogo.png"></a>
-        <p><strong>
-          They will be offering the following benefits to winning teams:
-        </strong></p>
-        <ul>
-          <li>25% discount on campaign fee OR $150 Indiegogo contribution to campaign</li>
-          <li>Training sessions for finalists who are interested in an Indiegogo campaign</li>
-          <li>Personal review sessions of campaign draft with Indiegogo staff</li>
-        </ul>
-      </div>
-      <div class="col-sm-6">
-        <p class="text-center"><strong>
-          Many thanks to Infusion for the sponsorship of the grand prizes!
-        </strong></p>
-        <img class="sponsor-img image-center" src="sponsors/infusion.png"></a>
-      </div>
-    </div>
-    <div class="row prizes">
-      <div class="text-center">
-        <h2 class="banner-header">Non-Profit Challenges</h2>
-      </div>
-    </div>
-    <div class="row prizes">
-      <div class="text-center">
-        <h2 class="banner-header">Company Sponsored Prizes</h2>
-      </div>
-      <% @prizes.each do |p| %>
-      <% if p.sponsor != nil %>
-      <div class="col-sm-6">
-        <a href="<%= p.sponsor.link_url %>">
-          <img class="sponsor-img-small image-center" src="sponsors/<%= p.sponsor.image_url %>">
-        </a>
-        <h3 class="text-center"><%= p.title %></h3>
-        <div><%= p.html_content.html_safe %></div>
-      </div>
-      <% end %>
-      <% end %>
+     <div class="col-sm-12">
+      <p class="text-center"><strong>
+        Many thanks to Infusion for the sponsorship of the grand prizes!
+      </strong></p>
+      <img class="sponsor-img image-center" src="sponsors/infusion.png"></a>
     </div>
   </div>
+  <div class="row prizes">
+    <div class="text-center">
+      <h2 class="banner-header">Company Sponsored Prizes</h2>
+    </div>
+    <% @prizes.each do |p| %>
+    <% if p.sponsor != nil %>
+    <div class="col-sm-6">
+      <a href="<%= p.sponsor.link_url %>">
+        <img class="sponsor-img-small image-center" src="sponsors/<%= p.sponsor.image_url %>">
+      </a>
+      <h3 class="text-center"><%= p.title %></h3>
+      <div><%= p.html_content.html_safe %></div>
+    </div>
+    <% end %>
+    <% end %>
+  </div>
+</div>
 </div>
