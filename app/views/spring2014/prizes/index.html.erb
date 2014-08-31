@@ -2,7 +2,9 @@
   <div class="container content">
     <h1>Prizes</h1>
     <div class="row prizes">
-      <h2 class="text-center banner-header">Grand Prize Track Winners</h2>
+      <div class="text-center">
+        <h2 class="banner-header">Grand Prize Tracks</h2>
+      </div>
       <% @prizes.each do |p| %>
       <% if p.sponsor == nil %>
       <div class="col-sm-4">
@@ -16,32 +18,36 @@
       <% end %>
     </div>
     <div class="row prizes">
-        <div class="col-sm-6">
-          <p class="text-center"><strong>
-            All grand prizes recieve support from Indiegogo, where teams will be able to take their projects to the next level.
-          </strong></p>
-          <img class="sponsor-img image-center" src="sponsors/indiegogo.png"></a>
-          <p><strong>
-            They will be offering the following benefits to winning teams:
-          </strong></p>
-          <ul>
-            <li>25% discount on campaign fee OR $150 Indiegogo contribution to campaign</li>
-            <li>Training sessions for finalists who are interested in an Indiegogo campaign</li>
-            <li>Personal review sessions of campaign draft with Indiegogo staff</li>
-          </ul>
-        </div>
-        <div class="col-sm-6">
-          <p class="text-center"><strong>
-            Many thanks to Infusion for the sponsorship of the grand prizes!
-          </strong></p>
-          <img class="sponsor-img image-center" src="sponsors/infusion.png"></a>
-        </div>
+      <div class="col-sm-6">
+        <p class="text-center"><strong>
+          All grand prizes recieve support from Indiegogo, where teams will be able to take their projects to the next level.
+        </strong></p>
+        <img class="sponsor-img image-center" src="sponsors/indiegogo.png"></a>
+        <p><strong>
+          They will be offering the following benefits to winning teams:
+        </strong></p>
+        <ul>
+          <li>25% discount on campaign fee OR $150 Indiegogo contribution to campaign</li>
+          <li>Training sessions for finalists who are interested in an Indiegogo campaign</li>
+          <li>Personal review sessions of campaign draft with Indiegogo staff</li>
+        </ul>
       </div>
-    <div class="row prizes">
-      <h2 class="text-center banner-header">Non-Profit Challenge Winners</h2>
+      <div class="col-sm-6">
+        <p class="text-center"><strong>
+          Many thanks to Infusion for the sponsorship of the grand prizes!
+        </strong></p>
+        <img class="sponsor-img image-center" src="sponsors/infusion.png"></a>
+      </div>
     </div>
     <div class="row prizes">
-      <h2 class="text-center banner-header">Company Sponsored Prizes</h2>
+      <div class="text-center">
+        <h2 class="banner-header">Non-Profit Challenges</h2>
+      </div>
+    </div>
+    <div class="row prizes">
+      <div class="text-center">
+        <h2 class="banner-header">Company Sponsored Prizes</h2>
+      </div>
       <% @prizes.each do |p| %>
       <% if p.sponsor != nil %>
       <div class="col-sm-6">

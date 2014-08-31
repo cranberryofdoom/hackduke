@@ -8,4 +8,7 @@ class Spring2014::MentorsController < InheritedResources::Base
 	def our_experts
 		@experts = Mentor.all
 	end
+
+	def guidelines
+	end
 end

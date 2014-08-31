@@ -1,0 +1,10 @@
+<div class="frame-light">
+  <div class="container content">
+  	<h1>Schedule</h1>
+    <% @events.each do |e| %>
+    <% if e.semester.season == "Spring" && e.semester.year.year == 2014 %>
+    <h1><%= e.name %></h1>
+    <% end %>
+    <% end %>
+  </div>
+</div>

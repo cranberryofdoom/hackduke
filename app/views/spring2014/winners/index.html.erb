@@ -1,0 +1,10 @@
+<div class="frame-light">
+  <div class="container content">
+  	<h1>Winners</h1>
+    <% @winners.each do |w| %>
+    <% if w.semester.season == "Spring" && w.semester.year.year == 2014 %>
+    <h1><%= w.name %></h1>
+    <% end %>
+    <% end %>
+  </div>
+</div>

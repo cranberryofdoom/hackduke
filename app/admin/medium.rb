@@ -29,9 +29,11 @@ ActiveAdmin.register Medium do
 
   show do
     attributes_table do
-      row :name
+      row :title
       row :image_url
       row :semester
+      row :link_url
+      row :media_type
     end
   end
 end
