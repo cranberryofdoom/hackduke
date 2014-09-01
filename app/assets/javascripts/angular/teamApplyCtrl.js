@@ -8,7 +8,8 @@
  * Controller of the applyHackdukeApp
  */
 angular.module('hackDukeApp')
-  .controller('teamApplyCtrl', function ($scope, $location, $anchorScroll, $modal, formService) {
+  .controller('teamApplyCtrl', ['$scope', '$location', '$anchorScroll', '$modal', 'formService', 
+    function ($scope, $location, $anchorScroll, $modal, formService) {
   	$scope.applyForm = {
     };
     $scope.participateForm = {};
@@ -41,25 +42,39 @@ angular.module('hackDukeApp')
             $scope.showError = true;
             $scope.goToTop();
         } else {
-            var modalInstance = createModal();
-            var data = {
+           // var modalInstance = createModal();
+            $scope.participantData = {
                 Name: $scope.participateForm.name,
                 Email: $scope.participateForm.email
             };
-            $.when(formService.saveParticipantData(data)).then(function() {
-                modalInstance.dismiss();
-                $scope.participateForm.name = '';
-                $scope.participateForm.email = '';
+            var callerScope = $scope;
+
+            $modal.open({
+              template: '<div><p style="text-align:center" id="savingParticipant">{{modalInfo.info}}</p></div>',
+              size: 'lg',
+              controller: function($scope, $modalInstance) {
+                $scope.modalInfo = {};
+                $scope.modalInfo.info = 'Saving your information';
+                var modalscope = $scope;
+                $.when(formService.saveParticipantData(callerScope.participantData)).then(function() {
+                    modalscope.modalInfo.info = 'Success!';
+                    $('#savingParticipant').click();
+                    setTimeout(function() {
+                        $modalInstance.close();
+                    }, 100);
+                    callerScope.participateForm.name = '';
+                    callerScope.participateForm.email = '';
+                }, function() {
+                modalscope.modalInfo.info = 'There seems to be a problem. Please try again later!';
+                    $('#savingParticipant').click();
+                    setTimeout(function() {
+                        $modalInstance.close();
+                    }, 1800);
+                });
+              }
             });
         }
     };
-
-    function createModal() {
-        return $modal.open({
-          template: '<div style="text-align:center"><p style="text-align:center">Saving your information...</p></div>',
-          size: 'lg'
-        });
-    }
 
 
     $scope.revertError = function() {
@@ -71,7 +86,6 @@ angular.module('hackDukeApp')
     		$scope.showError = true;
     		$scope.goToTop();
     	} else {
-            var modalInstance = createModal();
     		$scope.divisions.forEach(function(division) {
 	    		if ($scope.applyForm[division] === true) {
 	    			$scope.applyForm[division] = 'Yes';
@@ -94,21 +108,44 @@ angular.module('hackDukeApp')
 	    		Applications: $scope.applyForm.applications,
 	    		Ideas: $scope.applyForm.ideas
 		    };
-	    	$.when(formService.saveData(data)).then(function() {
-                modalInstance.dismiss();
-                $scope.divisions.forEach(function(division) {
-                    $scope.applyForm[division] === true;
-                });
-                $scope.applyForm.name = '';
-                $scope.applyForm.netId = '';
-                $scope.applyForm.email = '';
-                $scope.applyForm.graduationYear = '';
-                $scope.applyForm.phoneNumber = '';
-                $scope.applyForm.projects = '';
-                $scope.applyForm.experience = '';
-                $scope.applyForm.ideas = '';
+
+            var callerScope = $scope;
+
+            $modal.open({
+                template: '<div><p style="text-align:center" id="savingOrganizer">{{modalInfo.info}}</p></div>',
+                size: 'lg',
+                controller: function($scope, $modalInstance) {
+                    $scope.modalInfo = {};
+                    $scope.modalInfo.info = 'Saving your information';
+                    var modalscope = $scope;
+                    $.when(formService.saveParticipantData(callerScope.participantData)).then(function() {
+                        modalscope.modalInfo.info = 'Success!';
+                        $('#savingOrganizer').click();
+                        setTimeout(function() {
+                            $modalInstance.close();
+                        }, 100);
+                        $scope.divisions.forEach(function(division) {
+                            $scope.applyForm[division] = false;
+                        });
+                
+                        callerScope.applyForm.name = '';
+                        callerScope.applyForm.netId = '';
+                        callerScope.applyForm.email = '';
+                        callerScope.applyForm.graduationYear = '';
+                        callerScope.applyForm.phoneNumber = '';
+                        callerScope.applyForm.projects = '';
+                        callerScope.applyForm.experience = '';
+                        callerScope.applyForm.ideas = '';
+                    }, function() {
+                        modalscope.modalInfo.info = 'There seems to be a problem. Please try again later!';
+                        $('#savingOrganizer').click();
+                        setTimeout(function() {
+                            $modalInstance.close();
+                        }, 1800);
+                    });
+                }
             });
     	}
     	
     };
-  });
+  }]);
