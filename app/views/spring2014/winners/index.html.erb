@@ -8,7 +8,7 @@
 			<% @main_winners.each do |m| %>
 			<% if m.semester.season == "Spring" && m.semester.year.year == 2014 %>
 			<h3><%= m.prize_description %></h3>
-			<a href="<%= m.link_url %>"><%= m.project %></p>
+			<a href="<%= m.link_url %>"><%= m.project %></a>
 			<p><%= m.team_members %></p>
 			<% end %>
 			<% end %>
