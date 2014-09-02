@@ -5,7 +5,7 @@
 			<% @experts.each do |e| %>
 			<% if Partner.exists?(e.partner) %>
 			<div class="col-sm-4">
-				<img class="profile-img img-hover" src="mentors/<%= e.image_url %>">
+				<img class="profile-img" src="mentors/<%= e.image_url %>">
 				<h3 class="text-center"><%= e.name %></h3>
 				<p class="text-center"><strong>Track: </strong><%= e.partner.track %></p>
 				<p class="text-center"><strong>Focus: </strong><%= e.partner.focus %></p>
