@@ -38,10 +38,14 @@
   <div class="container content">
     <h1>FAQ</h1>
     <div class="row">
-      <% Faq.all.each do |f| %>
-      <% if f.match?("Spring", 2014) %>
-      <%= render f %>
-      <% end %>
+      <% Faq.all.in_groups(3, false) do |fg| %>
+      <div class="col-lg-4 col-md-4 col-sm-6">
+        <%= fg.each do |f| %>
+        <% if f.match?("Spring", 2014) %>
+        <%= render f %>
+        <% end %>
+        <% end %>
+      </div>
       <% end %>
     </div>
   </div>
