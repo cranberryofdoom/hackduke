@@ -5,7 +5,9 @@
     <% if c.semester.season == "Spring" && c.semester.year.year == 2014 %>
     <div class="row text-center">
       <div class="col-sm-6">
-        <h2 class="banner-header"><%= c.title %></h2>
+        <div class="text-center">
+          <h2 class="banner-header"><%= c.title %></h2>
+        </div>
         <h3>Instructors</h3>
         <div class="row">
           <% if c.instructors.count == 2 %>
