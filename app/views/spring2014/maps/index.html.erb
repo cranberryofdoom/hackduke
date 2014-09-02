@@ -1,11 +1,10 @@
 <div class="frame-light">
-  <div class="container content">
-  	<h1>Maps</h1>
-    <% @maps.each do |m| %>
-    <% if m.semester.season == "Spring" && m.semester.year.year == 2014 %>
-    <h1><%= m.name %></h1>
-    <img class="map" src="maps/<%= m.image_url %>">
-    <% end %>
-    <% end %>
-  </div>
+	<div class="container content">
+		<% @maps.each do |m| %>
+		<% if m.semester.season == "Spring" && m.semester.year.year == 2014 %>
+		<h1><%= m.name %></h1>
+		<img class="map" src="maps/<%= m.image_url %>">
+		<% end %>
+		<% end %>
+	</div>
 </div>
