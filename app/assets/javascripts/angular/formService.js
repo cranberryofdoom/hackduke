@@ -8,7 +8,8 @@
  * Service in the applyHackdukeApp.
  */
 angular.module('hackDukeApp')
-  .service('formService', function formService($resource) {
+  .service('formService', ['$resource', 
+    function formService($resource) {
     this.saveData = function(data) {
     	var request;
     	return request = $.ajax({
@@ -29,4 +30,4 @@ angular.module('hackDukeApp')
         });
     };
     return this;
-  });
+  }]);
