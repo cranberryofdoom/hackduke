@@ -1,9 +1,9 @@
 <div class="frame-light">
   <div class="container content">
     <h1>Crash Courses</h1>
-    <% @courses.each do |c| %>
-    <% if c.semester.season == "Spring" && c.semester.year.year == 2014 %>
     <div class="row text-center">
+      <% @courses.each do |c| %>
+      <% if c.semester.season == "Spring" && c.semester.year.year == 2014 %>
       <div class="col-sm-6">
         <div class="text-center">
           <h2 class="banner-header"><%= c.title %></h2>
@@ -31,8 +31,8 @@
         <h3><%= c.start_time.strftime("%l:%M %p") %> to <%= c.end_time.strftime("%l:%M %p") %></h3>
         <h3><%= c.location %></h3>
       </div>
+      <% end %>
+      <% end %>
     </div>
-    <% end %>
-    <% end %>
   </div>
 </div>
