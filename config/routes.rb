@@ -9,7 +9,7 @@ Hackduke::Application.routes.draw do
     get '/mentor-guidelines', to: 'fall2014/mentors#guidelines'
     get '/sponsor-guidelines', to: 'fall2014/sponsors#guidelines'
 
-    resources :organizers, only: [:index]
+    resources :organizers, only: [:index], :controller => 'fall2014/organizers'
   end
 
   constraints subdomain: 'spring2014' do
