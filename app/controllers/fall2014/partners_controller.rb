@@ -1,5 +1,5 @@
-class Spring2014::PartnersController < ApplicationController
-  layout 'spring2014'
+class Fall2014::PartnersController < ApplicationController
+  layout 'fall2014'
 
   def index
     @partners = Partner.all

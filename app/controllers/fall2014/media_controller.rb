@@ -1,5 +1,5 @@
-class Spring2014::MediaController < ApplicationController
-	layout 'spring2014'
+class Fall2014::MediaController < ApplicationController
+	layout 'fall2014'
 
 	def index
 		@media = Medium.all

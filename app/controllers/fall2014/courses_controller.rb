@@ -1,5 +1,5 @@
-class Spring2014::CoursesController < ApplicationController
-  layout 'spring2014'
+class Fall2014::CoursesController < ApplicationController
+  layout 'fall2014'
   
   def index
     @courses = Course.all

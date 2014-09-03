@@ -1,5 +1,5 @@
-class Spring2014::EventsController < ApplicationController
-  layout 'spring2014'
+class Fall2014::EventsController < ApplicationController
+  layout 'fall2014'
 
   def index
   	@events = Event.all
