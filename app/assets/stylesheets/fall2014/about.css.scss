@@ -7,6 +7,15 @@
 	}
 }
 
+@media (max-width: 320px) {
+	#storm {
+		img {
+			width: 300px;
+			margin: 0;
+		}
+	}
+}
+
 #about {
 	padding-bottom: 20px;
 	h3 {

@@ -10,3 +10,13 @@
 #faq {
 	padding-bottom: 0;
 }
+
+@media (max-width: 320px) {
+	#jean-grey {
+		text-align: center;
+		img {
+			width: 300px;
+			margin: 0;
+		}
+	}
+}

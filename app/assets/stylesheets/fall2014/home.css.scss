@@ -124,7 +124,7 @@
 			margin: 5px;
 		}
 		#signup-container {
-			padding: 10px 20px 0 20px;
+			padding: 10px 20px 20px 20px;
 		}
 		background-color: white;
 		width: 200px;
@@ -136,7 +136,7 @@
 		.arrow-down {
 			display: block;
 			position: absolute;
-			left: 180px;
+			left: 130px;
 		}
 	}
 	#home-badge {
@@ -163,6 +163,8 @@
 		.cta-3 {
 			margin: 5px;
 		}
+		.arrow-down {
+			left: 180px;
+		}
 	}
-
 }
