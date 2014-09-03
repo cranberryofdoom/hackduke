@@ -1,0 +1,36 @@
+<div class="frame-light">
+  <div class="container content">
+    <h1>Crash Courses</h1>
+    <div class="row text-center">
+      <% @courses.each do |c| %>
+      <% if c.semester.season == "Spring" && c.semester.year.year == 2014 %>
+      <div class="col-sm-6">
+        <div class="text-center">
+          <h2 class="banner-header"><%= c.title %></h2>
+        </div>
+        <h3>Instructors</h3>
+        <div class="row">
+          <% if c.instructors.count == 2 %>
+          <% c.instructors.each do |i| %>
+          <div class="col-sm-6">
+            <img class="profile-img" src="instructors/<%= i.image_url %>">
+            <p><%= i.name %></p>
+          </div>
+          <% end %>
+          <% end %>
+          <% if c.instructors.count == 1 %>
+          <% c.instructors.each do |i| %>
+          <div class="col-sm-12">
+            <img class="profile-img" src="instructors/<%= i.image_url %>">
+            <p><%= i.name %></p>
+          </div>
+          <% end %>
+          <% end %>
+        </div>
+        <p><strong><%= c.date.strftime("%A, %B %d") %> | <%= c.start_time.strftime("%l:%M %p") %> to <%= c.end_time.strftime("%l:%M %p") %> | <%= c.location %></strong></p>
+      </div>
+      <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

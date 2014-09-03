@@ -3,27 +3,13 @@ Hackduke::Application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   constraints subdomain: 'www' do
-    get '/', to: 'spring2014/static#index'
+    get '/', to: 'fall2014/static#index'
 
-    get '/gist', to: 'spring2014/static#gist'
-    get '/apply-team', to: 'spring2014/widgets#apply_team'
-    get '/our-mentors', to: 'spring2014/mentors#our_mentors'
-    get '/our-experts', to: 'spring2014/mentors#our_experts'
-    get '/mentor-guidelines', to: 'spring2014/mentors#guidelines'
-    get '/brainstorm', to: 'spring2014/events#brainstorm'
-    get '/tech-talks', to: 'spring2014/events#tech_talks'
+    get '/apply-team', to: 'fall2014/widgets#apply_team'
+    get '/mentor-guidelines', to: 'fall2014/mentors#guidelines'
+    get '/sponsor-guidelines', to: 'fall2014/sponsors#guidelines'
 
-    resources :mentors, only: [:index], :controller => 'spring2014/mentors'
-    resources :events, only: [:index], :controller => 'spring2014/events'
-    resources :media, only: [:index], :controller => 'spring2014/media'
-    resources :winners, only: [:index], :controller => 'spring2014/winners'
-    resources :maps, only: [:index], :controller => 'spring2014/maps'
-    resources :courses, only: [:index], :controller => 'spring2014/courses'
-    resources :prizes, only: [:index], :controller => 'spring2014/prizes'
-    resources :faqs, only: [:index], :controller => 'spring2014/faqs'
-    resources :partners, only: [:index], :controller => 'spring2014/partners'
-    resources :sponsors, only: [:index], :controller => 'spring2014/sponsors'
-    resources :organizers, only: [:index], :controller => 'spring2014/organizers'
+    resources :organizers, only: [:index]
   end
 
   constraints subdomain: 'spring2014' do
@@ -47,7 +33,6 @@ Hackduke::Application.routes.draw do
       resources :maps, only: [:index]
       resources :courses, only: [:index]
       resources :prizes, only: [:index]
-      resources :faqs, only: [:index]
       resources :partners, only: [:index]
       resources :sponsors, only: [:index]
       resources :organizers, only: [:index]
