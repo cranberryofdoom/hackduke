@@ -5,7 +5,7 @@ Hackduke::Application.routes.draw do
   constraints subdomain: 'www' do
     get '/', to: 'fall2014/static#index'
 
-    get '/apply-team', to: 'fall2014/widgets#apply_team'
+    get '/get-involved', to: 'fall2014/widgets#apply_team'
     get '/mentor-guidelines', to: 'fall2014/mentors#guidelines'
     get '/sponsor-guidelines', to: 'fall2014/sponsors#guidelines'
 
