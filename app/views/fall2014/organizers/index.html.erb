@@ -3,7 +3,7 @@
     <h1>Meet Our Team</h1>
     <div class="row team">
       <% @organizers.each do |o| %>
-      <% if o.admin == false && o.match?("Spring", 2014) %>
+      <% if o.admin == false && o.match?("Fall", 2014) %>
       <div class="col-sm-4 col-md-3">
         <img class="team-image" src="organizers/<%= o.image_url %>">
         <h3 class="team-member text-center"><%= o.name %></h3>
@@ -16,7 +16,7 @@
     <h1>Thanks To Our Faculty</h1>
     <div class="row team">
       <% @organizers.each do |o| %>
-      <% if o.admin == true && o.match?("Spring", 2014)%>
+      <% if o.admin == true && o.match?("Fall", 2014)%>
       <div class="col-sm-4 col-md-3">
         <img class="team-image" src="organizers/<%= o.image_url %>">
         <h3 class="team-member text-center"><%= o.name %></h3>
