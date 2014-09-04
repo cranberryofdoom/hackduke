@@ -8,8 +8,8 @@
  * Controller of the applyHackdukeApp
  */
 angular.module('hackDukeApp')
-  .controller('teamApplyCtrl', ['$scope', '$location', '$anchorScroll', '$modal', 'formService', 
-    function ($scope, $location, $anchorScroll, $modal, formService) {
+  .controller('teamApplyCtrl', ['$scope', '$location', '$modal', '$anchorScroll', 'formService', 
+    function ($scope, $location, $modal, $anchorScroll, formService) {
   	$scope.applyForm = {
     };
     $scope.participateForm = {};
@@ -52,7 +52,7 @@ angular.module('hackDukeApp')
             $modal.open({
               template: '<div><p style="text-align:center" id="savingParticipant">{{modalInfo.info}}</p></div>',
               size: 'lg',
-              controller: function($scope, $modalInstance) {
+              controller: ['$scope', '$modalInstance', function($scope, $modalInstance) {
                 $scope.modalInfo = {};
                 $scope.modalInfo.info = 'Saving your information';
                 var modalscope = $scope;
@@ -71,7 +71,7 @@ angular.module('hackDukeApp')
                         $modalInstance.close();
                     }, 1800);
                 });
-              }
+              }]
             });
         }
     };
@@ -114,7 +114,7 @@ angular.module('hackDukeApp')
             $modal.open({
                 template: '<div><p style="text-align:center" id="savingOrganizer">{{modalInfo.info}}</p></div>',
                 size: 'lg',
-                controller: function($scope, $modalInstance) {
+                controller: ['$scope', '$modalInstance', function($scope, $modalInstance) {
                     $scope.modalInfo = {};
                     $scope.modalInfo.info = 'Saving your information';
                     var modalscope = $scope;
@@ -143,7 +143,7 @@ angular.module('hackDukeApp')
                             $modalInstance.close();
                         }, 1800);
                     });
-                }
+                }]
             });
     	}
     	
