@@ -93,7 +93,7 @@ angular.module('hackDukeApp')
 	    			$scope.applyForm[division] = 'No';
 	    		}
 	    	});
-	    	var data = {
+	    	$scope.data = {
 	    		Name: $scope.applyForm.name,
 	    		netId: $scope.applyForm.netId,
 	    		Email: $scope.applyForm.email,
@@ -111,6 +111,7 @@ angular.module('hackDukeApp')
 
             var callerScope = $scope;
 
+
             $modal.open({
                 template: '<div><p style="text-align:center" id="savingOrganizer">{{modalInfo.info}}</p></div>',
                 size: 'lg',
@@ -118,14 +119,14 @@ angular.module('hackDukeApp')
                     $scope.modalInfo = {};
                     $scope.modalInfo.info = 'Saving your information';
                     var modalscope = $scope;
-                    $.when(formService.saveParticipantData(callerScope.participantData)).then(function() {
+                    $.when(formService.saveData(callerScope.data)).then(function() {
                         modalscope.modalInfo.info = 'Success!';
                         $('#savingOrganizer').click();
                         setTimeout(function() {
                             $modalInstance.close();
                         }, 100);
-                        $scope.divisions.forEach(function(division) {
-                            $scope.applyForm[division] = false;
+                        callerScope.divisions.forEach(function(division) {
+                            callerScope.applyForm[division] = false;
                         });
                 
                         callerScope.applyForm.name = '';
@@ -136,6 +137,7 @@ angular.module('hackDukeApp')
                         callerScope.applyForm.projects = '';
                         callerScope.applyForm.experience = '';
                         callerScope.applyForm.ideas = '';
+                        callerScope.data = {};
                     }, function() {
                         modalscope.modalInfo.info = 'There seems to be a problem. Please try again later!';
                         $('#savingOrganizer').click();
