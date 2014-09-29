@@ -6,6 +6,7 @@ Hackduke::Application.routes.draw do
   get '/', to: 'fall2014/static#index'
 
   get '/get-involved', to: 'fall2014/widgets#apply_team'
+  get '/mentor-info', to: 'fall2014/widgets#mentor_info'
   get '/mentor-guidelines', to: 'fall2014/mentors#guidelines'
   get '/sponsor-guidelines', to: 'fall2014/sponsors#guidelines'
   get '/our-mentors', to: 'fall2014/mentors#our_mentors'
@@ -15,7 +16,7 @@ Hackduke::Application.routes.draw do
 
   constraints subdomain: 'www' do
     get '/', to: 'fall2014/static#index'
-
+    get '/mentor-info', to: 'fall2014/widgets#mentor_info'
     get '/get-involved', to: 'fall2014/widgets#apply_team'
     get '/mentor-guidelines', to: 'fall2014/mentors#guidelines'
     get '/sponsor-guidelines', to: 'fall2014/sponsors#guidelines'
@@ -31,7 +32,7 @@ Hackduke::Application.routes.draw do
       
       get '/gist', to: 'static#gist'
       get '/apply-team', to: 'widgets#apply_team'
-
+      get '/mentor-info', to: 'widgets#mentor_info'
       resources :mentors, only: [:index]
       get '/our-mentors', to: 'mentors#our_mentors'
       get '/our-experts', to: 'mentors#our_experts'

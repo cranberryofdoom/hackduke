@@ -5,5 +5,8 @@
 //= require ./select2
 //= require ./angular-ui-select/select2
 //= require ./app
-//= require ./teamApplyCtrl
 //= require ./formService
+//= require ./mentorFormService
+//= require ./teamApplyCtrl
+//= require ./mentorApplyCtrl
+
