@@ -11,6 +11,7 @@ Hackduke::Application.routes.draw do
   get '/sponsor-guidelines', to: 'fall2014/sponsors#guidelines'
   get '/our-mentors', to: 'fall2014/mentors#our_mentors'
   get '/our-experts', to: 'fall2014/mentors#our_experts'
+  get '/schedule', to: 'fall2014/events#index'
 
   resources :organizers, only: [:index], :controller => 'fall2014/organizers'
 
