@@ -3,16 +3,6 @@ Hackduke::Application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
-  get '/', to: 'fall2014/static#index'
-
-  get '/get-involved', to: 'fall2014/widgets#apply_team'
-  get '/mentor-info', to: 'fall2014/widgets#mentor_info'
-  get '/mentor-guidelines', to: 'fall2014/mentors#guidelines'
-  get '/sponsor-guidelines', to: 'fall2014/sponsors#guidelines'
-  get '/our-mentors', to: 'fall2014/mentors#our_mentors'
-  get '/our-experts', to: 'fall2014/mentors#our_experts'
-  get '/schedule', to: 'fall2014/events#index'
-
   resources :organizers, only: [:index], :controller => 'fall2014/organizers'
 
   constraints subdomain: 'www' do
@@ -23,6 +13,7 @@ Hackduke::Application.routes.draw do
     get '/sponsor-guidelines', to: 'fall2014/sponsors#guidelines'
     get '/our-mentors', to: 'fall2014/mentors#our_mentors'
     get '/our-experts', to: 'fall2014/mentors#our_experts'
+    get '/schedule', to: 'fall2014/events#index'
 
     resources :organizers, only: [:index], :controller => 'fall2014/organizers'
   end
