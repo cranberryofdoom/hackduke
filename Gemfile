@@ -41,7 +41,6 @@ gem "validate_url"
 
 # Better Errors
 group :development do
-	gem 'pg'
 	gem "better_errors"
 	gem "binding_of_caller"
 end
