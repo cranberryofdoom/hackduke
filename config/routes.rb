@@ -3,8 +3,6 @@ Hackduke::Application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
-  resources :organizers, only: [:index], :controller => 'fall2014/organizers'
-
   constraints subdomain: 'www' do
     get '/', to: 'fall2014/static#index'
     get '/mentor-info', to: 'fall2014/widgets#mentor_info'
