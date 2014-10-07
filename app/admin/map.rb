@@ -20,7 +20,7 @@ ActiveAdmin.register Map do
     column :name
     column :image_url
     column :semester
-    default_actions
+    actions
   end
 
   show do

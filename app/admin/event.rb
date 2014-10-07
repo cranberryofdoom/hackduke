@@ -26,7 +26,7 @@ ActiveAdmin.register Event do
     column :start_time
     column :end_time
     column :semester
-    default_actions
+    actions
   end
 
   show do

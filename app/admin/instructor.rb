@@ -22,7 +22,7 @@ ActiveAdmin.register Instructor do
     column :courses do |c|
       (c.courses.map { |e| e.title }).join(' , ')
     end
-    default_actions
+    actions
   end
 
   show do

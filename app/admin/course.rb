@@ -32,7 +32,7 @@ ActiveAdmin.register Course do
       (i.instructors.map { |e| e.name }).join(', ')
     end
     column :semester
-    default_actions
+    actions
   end
 
   show do

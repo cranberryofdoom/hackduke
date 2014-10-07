@@ -28,7 +28,7 @@ ActiveAdmin.register Prize do
       (p.partners.map { |e| e.name }).join(' , ')
     end
     column :semester
-    default_actions
+    actions
   end
 
   show do

@@ -34,7 +34,7 @@ ActiveAdmin.register Partner do
     column :semesters do |s|
       (s.semesters.map { |e| ([e.season, e.year.year]).join(' ') }).join(' , ')
     end
-    default_actions
+    actions
   end
 
   show do

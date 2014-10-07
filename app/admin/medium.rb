@@ -24,7 +24,7 @@ ActiveAdmin.register Medium do
     column :semester
     column :link_url
     column :media_type
-    default_actions
+    actions
   end
 
   show do

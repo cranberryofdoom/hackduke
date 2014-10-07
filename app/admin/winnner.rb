@@ -25,7 +25,7 @@ ActiveAdmin.register Winner do
     column :link_url
     column :prize_type
     column :semester
-    default_actions
+    actions
   end
 
   show do
