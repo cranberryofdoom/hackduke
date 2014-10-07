@@ -51,7 +51,7 @@
   <div class="container content">
     <h1>FAQ</h1>
     <div class="row">
-      <% Faq.all.in_groups(3, false) do |fg| %>
+      <% @Faq.in_groups(3, false) do |fg| %>
       <div class="col-lg-4 col-md-4 col-sm-6">
         <% fg.each do |f| %>
         <% if f.match?("Fall", 2014) %>
