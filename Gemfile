@@ -36,6 +36,8 @@ gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'bluecloth'
 gem 'activeadmin_pagedown'
 
+gem 'devise'
+
 # URL Validation
 gem "validate_url"
 
