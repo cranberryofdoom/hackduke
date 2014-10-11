@@ -19,28 +19,20 @@
       <% end %>
     </div>
     <div class="row prizes">
-     <div class="col-sm-12">
-      <p class="text-center"><strong>
-        Many thanks to Infusion for the sponsorship of the grand prizes!
-      </strong></p>
-      <img class="sponsor-img image-center" src="sponsors/infusion.png"></a>
+      <div class="text-center">
+        <h2 class="banner-header">Company Sponsored Prizes</h2>
+      </div>
+      <% @prizes.each do |p| %>
+      <% if p.sponsor != nil %>
+      <div class="col-sm-6">
+        <a href="<%= p.sponsor.link_url %>">
+          <img class="sponsor-img-small image-center" src="sponsors/<%= p.sponsor.image_url %>">
+        </a>
+        <h3 class="text-center"><%= p.title %></h3>
+        <div><%= p.html_content.html_safe %></div>
+      </div>
+      <% end %>
+      <% end %>
     </div>
   </div>
-  <div class="row prizes">
-    <div class="text-center">
-      <h2 class="banner-header">Company Sponsored Prizes</h2>
-    </div>
-    <% @prizes.each do |p| %>
-    <% if p.sponsor != nil %>
-    <div class="col-sm-6">
-      <a href="<%= p.sponsor.link_url %>">
-        <img class="sponsor-img-small image-center" src="sponsors/<%= p.sponsor.image_url %>">
-      </a>
-      <h3 class="text-center"><%= p.title %></h3>
-      <div><%= p.html_content.html_safe %></div>
-    </div>
-    <% end %>
-    <% end %>
-  </div>
-</div>
 </div>
