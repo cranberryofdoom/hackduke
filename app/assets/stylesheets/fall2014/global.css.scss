@@ -4,25 +4,26 @@ html, body {
 	color: white;
 	background-color: $background;
 }
-
+.container-small {
+	margin-left: auto;
+	margin-right: auto;
+	width: 60%;
+}
 .frame-light {
 	padding: 100px 0;
 	position: relative;
 	background-color: $background;
 }
-
 .frame-dark {
 	padding: 100px 0;
 	position: relative;
 	background-color: darken($background, 5%);
 }
-
 .content {
 	margin-top: 20px;
 	padding-bottom: 20px;
 	background-color: white;
 }
-
 a {
 	color: $blue;
 	font-weight: 700;
@@ -32,32 +33,26 @@ a {
 		text-decoration: none;
 	}
 }
-
 p {
 	font-family: "Raleway";
 	padding: 10px 20px;
 	color: $black;
 	font-size: 14px;
 }
-
 label {
 	font-family: "Raleway";
 	padding: 10px 20px;
 	color: $black;
 	font-size: 14px;
 }
-
 form {
 	margin-top: 20px;
 }
-
 h1 {
 	font-family: "Raleway";
 	padding: 20px;
 	color: $yellow;
-	text-shadow:
-	3px 3px 0 $black,
-	1px 1px 0 $black;
+	text-shadow: 3px 3px 0 $black, 1px 1px 0 $black;
 	background-color: $blue;
 	font-weight: 900;
 	font-size: 35px;
@@ -65,7 +60,6 @@ h1 {
 	text-align: center;
 	vertical-align: middle;
 }
-
 h2 {
 	font-family: "Raleway";
 	padding: 20px;
@@ -75,7 +69,6 @@ h2 {
 	text-align: center;
 	vertical-align: middle;
 }
-
 h3 {
 	font-family: "Raleway";
 	font-weight: 700;
@@ -83,11 +76,9 @@ h3 {
 	padding: 0 20px;
 	color: $black;
 }
-
 li {
 	color: $black;
 }
-
 .cta {
 	display: inline-block;
 	margin: auto;
@@ -101,7 +92,6 @@ li {
 		text-decoration: none;
 	}
 }
-
 .cta-wrapper {
 	background-color: $blue;
 	margin-top: 40px;
@@ -115,14 +105,11 @@ li {
 		font-weight: 900;
 		font-size: 32px;
 		color: $yellow;
-		text-shadow:
-		1px 1px 0 $black,
-		1px 1px 0 $black;
+		text-shadow: 1px 1px 0 $black, 1px 1px 0 $black;
 		text-transform: uppercase;
 		padding-top: 30px;
 	}
 }
-
 .or {
 	z-index: 1;
 	display: inline;
@@ -136,7 +123,6 @@ li {
 	padding-top: 20px;
 	border-radius: 50%;
 }
-
 .cta-2 {
 	font-weight: 500;
 	font-size: 16px;
@@ -152,8 +138,7 @@ li {
 		color: lighten($black, 10%);
 		text-decoration: none;
 	}
-	&:before
-	{
+	&:before {
 		content: ' ';
 		position: absolute;
 		width: 30px;
@@ -164,8 +149,7 @@ li {
 		border-style: solid;
 		border-color: $yellow $yellow $yellow transparent;
 	}
-	&:after
-	{
+	&:after {
 		content: ' ';
 		position: absolute;
 		width: 30px;
@@ -177,13 +161,11 @@ li {
 		border-color: $yellow transparent $yellow $yellow;
 	}
 }
-
 .image-center {
 	margin-left: auto;
 	margin-right: auto;
 	display: block;
 }
-
 .banner-header {
 	background-color: $yellow;
 	color: $blue;
@@ -211,10 +193,9 @@ li {
 		top: 4px;
 		border-width: 27px 10px;
 		border-style: solid;
-		border-color: darken($yellow, 10%) transparent darken($yellow, 10%) darken($yellow, 10%) ;
+		border-color: darken($yellow, 10%) transparent darken($yellow, 10%) darken($yellow, 10%);
 	}
 }
-
 @media (max-width: 768px) {
 	h1 {
 		font-size: 30px;
@@ -228,24 +209,19 @@ li {
 		float: none !important;
 		display: block;
 		margin: auto;
-		&:before
-		{
+		&:before {
 			top: -5px;
-			border-color: darken($yellow, 10%) darken($yellow, 10%) darken($yellow, 10%) transparent ;
-
+			border-color: darken($yellow, 10%) darken($yellow, 10%) darken($yellow, 10%) transparent;
 		}
-		&:after
-		{
+		&:after {
 			top: -5px;
-			border-color: darken($yellow, 10%) transparent darken($yellow, 10%) darken($yellow, 10%) ;
-
+			border-color: darken($yellow, 10%) transparent darken($yellow, 10%) darken($yellow, 10%);
 		}
 	}
 	.btn-wrapper {
 		width: 100% !important;
 	}
 }
-
 .profile-img {
 	display: block;
 	margin: auto;
@@ -254,7 +230,6 @@ li {
 	width: 150px;
 	height: 150px;
 }
-
 .img-hover {
 	&:hover {
 		opacity: 0.7;
