@@ -1,16 +1,25 @@
 <div class="frame-light">
   <div class="container content">
     <h1>Prizes</h1>
-    <div class="row prizes">
+    <div class="row">
       <div class="text-center">
         <h2 class="banner-header">Grand Prize Tracks</h2>
       </div>
+      <p class="text-center">There will be one grand prize winning hack for each track.</br>The team that best addresses the issues of that respective track will be awarded <strong>$750</strong> to a track-related non-profit of their choice.</p>
       <% @prizes.each do |p| %>
       <% if p.sponsor == nil %>
-      <div class="col-sm-4">
+      <div class="col-sm-3">
         <h3 class="text-center"><%= p.title %></h3>
         <div><%= p.html_content.html_safe %></div>
-        <p><strong>Who can I donate to?</strong></p>
+      </div>
+      <% end %>
+      <% end %>
+    </div>
+    <div class="row">
+      <p class="text-center"><strong>Can't think of anyone to donate to? Here are some non-profits we think are awesome and are going to be here this weekend!</strong></p>
+      <% @prizes.each do |p| %>
+      <% if p.sponsor == nil %>
+      <div class="col-sm-3">
         <% p.partners.each do |pp| %>
         <a href="<%= pp.link_url %>"><img class="image-center partner-img" src="partners/<%= pp.image_url %>"></a>
         <% end %>
@@ -18,7 +27,7 @@
       <% end %>
       <% end %>
     </div>
-    <div class="row prizes">
+    <div class="row">
       <div class="text-center">
         <h2 class="banner-header">Company Sponsored Prizes</h2>
       </div>
