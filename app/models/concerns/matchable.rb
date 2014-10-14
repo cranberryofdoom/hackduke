@@ -11,7 +11,7 @@ module Matchable
 
 	def match_one?(season, year)
 		semester = self.semester
-		if semester != nil
+		if semester != nil && semester.season == season && semester.year.strftime("%Y") == year.to_s
 			return true
 		end
 		return false
