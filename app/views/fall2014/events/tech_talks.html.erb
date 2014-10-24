@@ -1,0 +1,37 @@
+<div class="frame-light">
+	<div class="container content">
+		<h1>Tech Talks</h1>
+		<div class="row text-center">
+			<% @events.each do |c| %>
+			<div class="col-sm-6">
+				<div class="text-center">
+					<h2 class="banner-header"><%= c.name %></h2>
+				</div>
+				<div class="row">
+					<% if c.mentors.count == 2 %>
+					<h3>Speakers</h3>
+					<% c.mentors.each do |i| %>
+					<div class="col-sm-6">
+						<img class="profile-img" src="mentors/<%= i.image_url %>">
+						<p><%= i.name %></p>
+					</div>
+					<% end %>
+					<% end %>
+					<% if c.mentors.count == 1 %>
+					<h3>Speaker</h3>
+					<% c.mentors.each do |i| %>
+					<div class="col-sm-12">
+						<img class="profile-img" src="mentors/<%= i.image_url %>">
+						<p><%= i.name %></p>
+					</div>
+					<% end %>
+					<% end %>
+				</div>
+				<% if c.date != nil %>
+				<p><strong><%= c.date.strftime("%A, %B %d") %> | <%= c.start_time.strftime("%l:%M %p") %> to <%= c.end_time.strftime("%l:%M %p") %> | <%= c.location %></strong></p>
+				<% end %>
+			</div>
+			<% end %>
+		</div>
+	</div>
+</div>

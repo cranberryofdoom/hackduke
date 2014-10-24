@@ -8,6 +8,7 @@ class Mentor < ActiveRecord::Base
 	has_and_belongs_to_many :semesters
 	belongs_to :partner
 	belongs_to :sponsor
+	has_and_belongs_to_many :events
 
 	#validations
 	validates :name, presence: true

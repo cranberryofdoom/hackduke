@@ -13,7 +13,8 @@ Hackduke::Application.routes.draw do
     get '/our-experts', to: 'fall2014/mentors#our_experts'
     get '/prizes', to: 'fall2014/prizes#index'
     get '/travel', to: 'fall2014/static#travel'
-    get '/edu', to: 'fall2014/events#edu'
+    get '/fun', to: 'fall2014/static#fun'
+    get '/courses', to: 'fall2014/courses#index'
     get '/tech-talks', to: 'fall2014/events#tech_talks'
     get '/schedule', to: 'fall2014/events#index'
 

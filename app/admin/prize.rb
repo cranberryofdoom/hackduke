@@ -13,6 +13,7 @@ ActiveAdmin.register Prize do
       f.input :sponsor, :as => :select
       f.input :partners, :as => :check_boxes, :collection => Partner.all.where(:partnership_type => "Non-Profit Partner")
       f.input :semester, :as => :select
+      f.input :api
     end
     f.inputs "Description &nbsp;&nbsp;(use <a href='http://daringfireball.net/projects/markdown/syntax'>markdown</a>)" do
       f.input :markdown_content, :label => "Description", :as => :pagedown_text
@@ -24,6 +25,7 @@ ActiveAdmin.register Prize do
     column :title
     column :markdown_content
     column :sponsor
+    column :api
     column :partners do |p|
       (p.partners.map { |e| e.name }).join(' , ')
     end
@@ -36,6 +38,7 @@ ActiveAdmin.register Prize do
       row :title
       row :markdown_content
       row :sponsor
+      row :api
       row :partners do |p|
         (p.partners.map { |e| e.name }).join(' , ')
       end

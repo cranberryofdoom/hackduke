@@ -1,4 +1,6 @@
 class Course < ActiveRecord::Base
+	# concerns
+	include Matchable
 
 	# relations
 	belongs_to :semester
