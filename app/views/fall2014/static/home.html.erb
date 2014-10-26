@@ -91,7 +91,21 @@
   <div class="container content text-center">
     <h1>Sponsors</h1>
     <div class="row">
-      <% Sponsor.all.each do |s| %>
+      <% @large_sponsors.each do |s| %>
+      <% if s.match?("Fall", 2014) %>
+      <%= render s %>
+      <% end %>
+      <% end %>
+    </div>
+    <div class="row">
+      <% @medium_sponsors.each do |s| %>
+      <% if s.match?("Fall", 2014) %>
+      <%= render s %>
+      <% end %>
+      <% end %>
+    </div>
+    <div class="row">
+      <% @small_sponsors.each do |s| %>
       <% if s.match?("Fall", 2014) %>
       <%= render s %>
       <% end %>

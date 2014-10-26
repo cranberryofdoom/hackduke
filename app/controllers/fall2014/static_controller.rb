@@ -3,6 +3,9 @@ class Fall2014::StaticController < ApplicationController
 
 	def index
 		@faqs = match_semester(Faq.all, "Fall", 2014)
+		@large_sponsors = Sponsor.where(tier: "large")
+		@medium_sponsors = Sponsor.where(tier: "medium")
+		@small_sponsors = Sponsor.where(tier: "small")
 		render 'home'
 	end
 

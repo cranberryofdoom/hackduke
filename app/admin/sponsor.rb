@@ -12,6 +12,7 @@ ActiveAdmin.register Sponsor do
       f.input :name
       f.input :image_url, :hint => "Use 'company-name'.png and make sure the image file is in the public/sponsors folder"
       f.input :link_url
+      f.input :tier, :as => :select, :collection => ["small", "medium", "large"]
       f.input :semesters, :as => :check_boxes
     end
     f.actions
@@ -21,6 +22,7 @@ ActiveAdmin.register Sponsor do
     column :name
     column :image_url
     column :link_url
+    column :tier
     column :semesters do |s|
       (s.semesters.map { |e| ([e.season, e.year.year]).join(' ')  }).join(', ')
     end
@@ -32,6 +34,7 @@ ActiveAdmin.register Sponsor do
       row :name
       row :image_url
       row :link_url
+      row :tier
       row :semesters do |s|
         (s.semesters.map { |e| ([e.season, e.year.year]).join(' ')  }).join(', ')
       end    
