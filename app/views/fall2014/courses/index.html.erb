@@ -30,6 +30,7 @@
         <% if c.date != nil %>
         <p><strong><%= c.date.strftime("%A, %B %d") %> | <%= c.start_time.strftime("%l:%M %p") %> to <%= c.end_time.strftime("%l:%M %p") %> | <%= c.location %></strong></p>
         <% end %>
+        <a class="cta-3" href="<%= c.register_url %>">Register</a>
       </div>
       <% end %>
     </div>
