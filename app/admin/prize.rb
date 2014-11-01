@@ -13,7 +13,7 @@ ActiveAdmin.register Prize do
       f.input :sponsor, :as => :select
       f.input :partners, :as => :check_boxes, :collection => Partner.all.where(:partnership_type => "Non-Profit Partner")
       f.input :semester, :as => :select
-      f.input :api
+      f.input :api, :as => :check_boxes
     end
     f.inputs "Description &nbsp;&nbsp;(use <a href='http://daringfireball.net/projects/markdown/syntax'>markdown</a>)" do
       f.input :markdown_content, :label => "Description", :as => :pagedown_text

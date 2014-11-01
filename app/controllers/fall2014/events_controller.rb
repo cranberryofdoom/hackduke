@@ -5,6 +5,6 @@ class Fall2014::EventsController < ApplicationController
   end
 
   def tech_talks
-    @events = match_one_semester(Event.all, "Fall", 2014)
+    @events = Event.joins(:semester).where(semesters: {season: "Fall", year: Date.new(2014)})
   end
 end
