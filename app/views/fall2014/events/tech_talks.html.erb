@@ -35,6 +35,8 @@
 				<% if c.date != nil %>
 				<p><strong><%= c.date.strftime("%A, %B %d") %> | <%= c.start_time.strftime("%l:%M %p") %> to <%= c.end_time.strftime("%l:%M %p") %> | <%= c.location %></strong></p>
 				<% end %>
+				<h3 data-toggle="collapse" href="#one" aria-expanded="true" aria-controls="one">Learn More <span class="caret"></span></h3>
+				<div id="one" class="panel-collapse collapse"><%= c.html_content.html_safe %></div>
 			</div>
 			<% end %>
 		</div>

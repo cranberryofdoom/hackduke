@@ -1,6 +1,7 @@
 class Event < ActiveRecord::Base
 	# concerns
 	include Matchable
+	include Markdownable
 
 	# relations
 	belongs_to :semester
