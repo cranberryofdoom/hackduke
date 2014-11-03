@@ -57,9 +57,7 @@
       <% @faqs.in_groups(3, false) do |fg| %>
       <div class="col-lg-4 col-md-4 col-sm-6">
         <% fg.each do |f| %>
-        <% if f.match?("Fall", 2014) %>
         <%= render f %>
-        <% end %>
         <% end %>
       </div>
       <% end %>
@@ -69,14 +67,12 @@
     <%= image_tag "fall2014/jean-grey.svg" %>
   </div>
 </div>
-<!-- <div class="frame-light" id="mentors">
+<div class="frame-light" id="mentors">
   <div class="container content text-center">
-    <h1>Past Mentors</h1>
+    <h1>Mentors</h1>
     <div class="row">
-      <% Mentor.all.each do |m| %>
-      <% if m.match?("Fall", 2014) %>
+      <% @mentors.each do |m| %>
       <%= render m %>
-      <% end %>
       <% end %>
     </div>
     <div class="cta-wrapper">
@@ -86,29 +82,23 @@
       </div>
     </div>
   </div>
-</div> -->
-<div class="frame-light" id="sponsors">
+</div>
+<div class="frame-dark" id="sponsors">
   <div class="container content text-center">
     <h1>Sponsors</h1>
     <div class="row">
       <% @large_sponsors.each do |s| %>
-      <% if s.match?("Fall", 2014) %>
       <%= render s %>
-      <% end %>
       <% end %>
     </div>
     <div class="row">
       <% @medium_sponsors.each do |s| %>
-      <% if s.match?("Fall", 2014) %>
       <%= render s %>
-      <% end %>
       <% end %>
     </div>
     <div class="row">
       <% @small_sponsors.each do |s| %>
-      <% if s.match?("Fall", 2014) %>
       <%= render s %>
-      <% end %>
       <% end %>
     </div>
     <div class="cta-wrapper">
@@ -119,12 +109,12 @@
     </div>
   </div>
 </div>
-<div class="frame-dark" id="partners">
+<div class="frame-light" id="partners">
   <div class="container content text-center">
     <h1>Partners</h1>
     <div class="row">
       <% Partner.all.each do |p| %>
-      <% if p.match?("Fall", 2014) && p.partnership_type == "University Partner" %>
+      <% if p.partnership_type == "University Partner" %>
       <%= render p %>
       <% end %>
       <% end %>
