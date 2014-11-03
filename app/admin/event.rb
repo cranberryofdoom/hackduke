@@ -14,6 +14,7 @@ ActiveAdmin.register Event do
       f.input :date
       f.input :start_time
       f.input :end_time
+      f.input :sponsor, :as => :select
       f.input :mentors, :as => :check_boxes
       f.input :semester, :as => :select
     end
@@ -26,6 +27,7 @@ ActiveAdmin.register Event do
     column :date
     column :start_time
     column :end_time
+    column :sponsor
     column :mentors do |m|
      (m.mentors.map { |e| e.name }).join(', ')
    end
@@ -40,6 +42,7 @@ ActiveAdmin.register Event do
     row :date
     row :start_time
     row :end_time
+    row :sponsor
     row :mentors do |m|
       (m.mentors.map { |e| e.name }).join(', ')
     end  
