@@ -26,6 +26,11 @@
 					</div>
 					<% end %>
 					<% end %>
+					<% if c.sponsor != nil %>
+					<div class="col-sm-12">
+						<a href="c.sponsor.link_url"><img class="profile-img" src="sponsors/<%= c.sponsor.image_url %>"></a>
+					</div>
+					<% end %>
 				</div>
 				<% if c.date != nil %>
 				<p><strong><%= c.date.strftime("%A, %B %d") %> | <%= c.start_time.strftime("%l:%M %p") %> to <%= c.end_time.strftime("%l:%M %p") %> | <%= c.location %></strong></p>
