@@ -6,7 +6,7 @@ class Fall2014::StaticController < ApplicationController
 		@large_sponsors = Sponsor.joins(:semesters).where(semesters: {season: "Fall", year: Date.new(2014)}, tier: "large")
 		@medium_sponsors = Sponsor.joins(:semesters).where(semesters: {season: "Fall", year: Date.new(2014)}, tier: "medium")
 		@small_sponsors = Sponsor.joins(:semesters).where(semesters: {season: "Fall", year: Date.new(2014)}, tier: "small")
-		@mentors = Mentor.joins(:semesters).where(semesters: {season: "Fall", year: Date.new(2014)})
+		@mentors = Mentor.joins(:semesters).where(semesters: {season: "Fall", year: Date.new(2014)}).order(:sponsor_id)
 		render 'home'
 	end
 
