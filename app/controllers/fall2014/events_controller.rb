@@ -5,6 +5,6 @@ class Fall2014::EventsController < ApplicationController
   end
 
   def tech_talks
-    @events = Event.joins(:semester).where(semesters: {season: "Fall", year: Date.new(2014)}).order(:start_time)
+    @events = Event.joins(:semester).where(semesters: {season: "Fall", year: Date.new(2014)}).order(:date).order(:start_time)
   end
 end
