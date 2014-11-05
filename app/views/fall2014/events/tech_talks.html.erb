@@ -8,6 +8,23 @@
 					<h2 class="banner-header"><%= c.name %></h2>
 				</div>
 				<div class="row">
+					<% if c.mentors.count == 3 %>
+					<h3>Speakers</h3>
+					<% c.mentors.each do |i| %>
+					<% if i.image_url == "" %>
+					<div class="col-sm-4">
+						<img class="profile-img" src="http://placekitten.com/g/300/300">
+						<p><%= i.name %></p>
+					</div>
+					<% else %>
+					<div class="col-sm-4">
+						<img class="profile-img" src="mentors/<%= i.image_url %>">
+						<p><%= i.name %></p>
+					</div>
+					<% end %>
+					<% end %>
+					<% end %>
+
 					<% if c.mentors.count == 2 %>
 					<h3>Speakers</h3>
 					<% c.mentors.each do |i| %>
