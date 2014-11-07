@@ -17,4 +17,8 @@ class Fall2014::StaticController < ApplicationController
 	def fun
 		render 'fun'
 	end
+
+	def speakers
+		render 'speakers'
+	end
 end
