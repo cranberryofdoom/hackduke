@@ -79,8 +79,6 @@ GEM
       warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.0.2)
-    font-awesome-sass (4.2.2)
-      sass (~> 3.2)
     formtastic (2.3.0.rc3)
       actionpack (>= 3.0)
     has_scope (0.6.0.rc)
@@ -198,7 +196,6 @@ DEPENDENCIES
   bootstrap-sass (~> 3.0.3.0)
   coffee-rails (~> 4.0.0)
   devise
-  font-awesome-sass (~> 4.2.0)
   jbuilder (~> 1.2)
   jquery-rails
   jquery-turbolinks

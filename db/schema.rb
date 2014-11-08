@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141103230357) do
+ActiveRecord::Schema.define(version: 20141107231144) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -149,6 +149,10 @@ ActiveRecord::Schema.define(version: 20141103230357) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "html_content"
+    t.boolean  "education"
+    t.boolean  "poverty"
+    t.boolean  "health"
+    t.boolean  "energy"
   end
 
   add_index "mentors", ["partner_id"], name: "index_mentors_on_partner_id", using: :btree
