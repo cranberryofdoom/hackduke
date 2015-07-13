@@ -1,0 +1,30 @@
+{
+  "name": "hackduke",
+  "version": "0.1.0",
+  "description": "HackDuke: The official website for HackDuke.",
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.8.7"
+  },
+  "scripts": {
+    "dev": "gulp --type dev",
+    "start": "gulp",
+    "build": "gulp build"
+  },
+  "jest": {
+    "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
+    "testFileExtensions": [
+      "es6",
+      "js"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "es6"
+    ]
+  },
+  "dependencies": {
+    "react-router": "^0.13.3"
+  }
+}
