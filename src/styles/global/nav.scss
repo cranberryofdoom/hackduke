@@ -1,0 +1,32 @@
+nav {
+  background-color: $black;
+  padding: $base-unit;
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+  .logo {
+    width: 70px;
+    height: 42px;
+    background-image: url('../svg/logo.svg');
+    background-size: 70px;
+    margin-right: $base-unit;
+  }
+
+  ul {
+    display: flex;
+    flex-flow: row nowrap;
+    list-style: none;
+
+    li {
+      text-transform: uppercase;
+      align-self: center;
+      margin: 0 $base-unit;
+      
+      a {
+        color: $yellow;
+        text-decoration: none;
+      }
+    }
+  }
+}

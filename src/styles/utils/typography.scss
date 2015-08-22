@@ -1,0 +1,37 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway:500,700,900,300);
+
+h1, h2, h3, body, p, li, a {
+  font-family: "Raleway";
+  font-weight: 500;
+  color: $black;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+h1 {
+	color: $yellow;
+	text-shadow: 3px 3px 0 $black, 1px 1px 0 $black;
+	background-color: $blue;
+	font-weight: 900;
+	font-size: 36px;
+	text-transform: uppercase;
+	text-align: center;
+	vertical-align: middle;
+  line-height: 2;
+}
+
+h2 {
+	color: $blue;
+  text-shadow: 1px 1px 0 $yellow;
+	font-weight: 900;
+	font-size: 26px;
+  line-height: 1.75;
+  text-transform: uppercase;
+}
+
+h3 {
+	font-weight: 700;
+	font-size: 20px;
+  line-height: 1.5;
+}

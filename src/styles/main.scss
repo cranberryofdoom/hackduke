@@ -1,15 +1,12 @@
-@import "./normalize.css";
+@import "utils/mixins.scss";
+@import "utils/normalize.scss";
+@import "utils/colors.scss";
+@import "utils/grid.scss";
+@import "utils/reset.scss";
+@import "utils/typography.scss";
 
-$primary-color: green;
+@import "common/dropdown.scss";
 
-h1 {
-  color: $primary-color;
-}
+@import "global/nav.scss";
 
-li.task {
-  list-style-type: none;
-
-  label {
-    padding: 0 10px;
-  }
-}
+@import "components/home/home.scss";

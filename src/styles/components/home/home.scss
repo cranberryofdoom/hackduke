@@ -1,0 +1,42 @@
+.home {
+
+  .main {
+    @include flex();
+    @include justify-content(center);
+    @include align-items(center);
+
+    .badge {
+      margin: 11*$base-unit 0;
+      width: 320px;
+    }
+  }
+
+  .about {
+
+    .mission-unit {
+      @include flex();
+      @include justify-content(space-between);
+      @include align-items(center);
+      @include flex-flow(row, wrap);
+      margin-top: $base-unit;
+    }
+
+    .number {
+      font-size: 165px;
+      color: #ffcd34;
+      text-shadow: 3px 3px 0 $black, 1px 1px 0 $black;
+      font-weight: 900;
+      display: inline-block;
+      height: 100%;
+    }
+
+    .blurb {
+      width: 50%;
+      display: inline-block;
+    }
+
+    img {
+      width: 30%;
+    }
+  }
+}

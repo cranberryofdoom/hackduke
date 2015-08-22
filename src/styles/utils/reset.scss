@@ -1,0 +1,35 @@
+html {
+  background-color: $darker-grey;
+}
+
+html,
+body,
+#app,
+#page
+{
+  height: 100%;
+}
+
+section {
+  padding: $base-unit;
+  height: 100%;
+
+  .panel {
+    background-color: white;
+    margin: $base-unit;
+    padding: $base-unit;
+  }
+}
+
+section.dark {
+  background-color: $dark-grey;
+}
+
+.content {
+  margin-top: 70px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}

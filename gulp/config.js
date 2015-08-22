@@ -13,8 +13,12 @@ module.exports = {
       }
     }
   },
+  svg: {
+    src: src + '/svg/*.svg',
+    dest: dest + '/svg'
+  },
   sass: {
-    src: src + '/styles/**/*.{sass,scss,css}',
+    src: src + '/styles/main.scss',
     dest: dest + '/styles',
     settings: {
       indentedSyntax: false, // Enable .sass syntax?

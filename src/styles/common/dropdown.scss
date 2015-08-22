@@ -1,0 +1,31 @@
+.dropdown {
+  position: relative;
+
+  .dropdown-menu {
+    background-color: $black;
+    display: none;
+    padding-top: $base-unit * 2;
+
+    li {
+      text-transform: none;
+      padding-bottom: $base-unit;
+    }
+  }
+
+  .dropdown-menu.open {
+    display: block;
+    position: absolute;
+    left: 0;
+  }
+
+  .caret {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-top: 4px solid;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+  }
+}

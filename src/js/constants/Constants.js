@@ -7,7 +7,18 @@ export default {
   // Each time you add an action, add it here... They should be past-tense
   ActionTypes: keyMirror({
     TASK_ADDED: null,
-    ROUTE_CHANGED: null
+    ROUTE_CHANGED: null,
+
+    // Semester
+    SEMESTERS_RECIEVED: null,
+    SEMESTER_RECIEVED: null,
+
+    // FAQs
+    FAQS_RECEIVED: null,
+
+    // Abouts
+    ABOUTS_RECIEVED: null,
+    ABOUTS_GET: null
   }),
 
   ActionSources: keyMirror({
