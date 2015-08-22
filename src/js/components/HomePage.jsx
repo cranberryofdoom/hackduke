@@ -4,11 +4,14 @@ import AboutActionCreators from '../actions/AboutActionCreators';
 import AboutStore from '../stores/AboutStore';
 import BasicStoreMixin from '../mixins/BasicStoreMixin';
 import classNames from 'classnames';
+import FaqActionCreators from '../actions/FaqActionCreators';
+import FaqStore from '../stores/FaqStore';
+import Marked from 'marked';
 
 
 let HomePage = React.createClass({
 
-  mixins: [BasicStoreMixin(AboutStore)],
+  mixins: [BasicStoreMixin(AboutStore, FaqStore)],
 
   contextTypes: {
     router: React.PropTypes.func
@@ -16,11 +19,12 @@ let HomePage = React.createClass({
 
   componentWillMount() {
     AboutActionCreators.getAbouts();
+    FaqActionCreators.getFaqs();
   },
 
   getStateFromStore() {
     return {
-      faqs: [],
+      faqs: FaqStore.getAll().faqs,
       abouts: AboutStore.getAll().abouts
     }
   },
@@ -34,19 +38,29 @@ let HomePage = React.createClass({
 
     let abouts = this.state.abouts.map((about, i) => {
       return (
-        <div className="mission-unit" key={i}>
-          <img src={this.state.abouts[i].imageUrl} />
+        <div className="about" key={i}>
+          <img src={about.imageUrl} />
           <div className="number">{i + 1}.</div>
           <div className="blurb">
-            <h2>{this.state.abouts[i].header}</h2>
-            <p>{this.state.abouts[i].subHeader}</p>
+            <h2>{about.header}</h2>
+            <p>{about.subHeader}</p>
           </div>
         </div>
       )
     });
 
+    let faqs = this.state.faqs.map((faq, i) => {
+      let rawMarkup = Marked(faq.answer.toString(), {sanitize: true});
+      return (
+        <div className="faq" key={i}>
+          <h3>{faq.question}</h3>
+          <span dangerouslySetInnerHTML={{__html: rawMarkup}} />
+        </div>
+      );
+    });
+
     let aboutsSection = (
-      <section className="about dark">
+      <section className="abouts dark">
         <div className="panel">
           <h1>HackDuke Is About</h1>
           {abouts}
@@ -54,10 +68,11 @@ let HomePage = React.createClass({
       </section>
     );
 
-    let questions = (
+    let faqsSection = (
       <section className="faqs">
         <div className="panel">
           <h1>FAQs</h1>
+          {faqs}
         </div>
       </section>
     );
@@ -66,7 +81,7 @@ let HomePage = React.createClass({
       <div className="home">
         {mainSection}
         {aboutsSection}
-        {questions}
+        {faqsSection}
       </div>
     );
   }

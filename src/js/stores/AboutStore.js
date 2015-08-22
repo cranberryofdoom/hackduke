@@ -20,14 +20,13 @@ const AboutStore = assign({}, BaseStore, {
     let action = payload.action;
 
     switch(action.type) {
-      case Constants.ActionTypes.ABOUTS_RECIEVED:
+      case Constants.ActionTypes.ABOUTS_RECEIVED:
         _abouts = action.abouts.map(about => {
           about.imageUrl = about.fields.Image[0].url;
           about.header = about.fields.Header;
           about.subHeader = about.fields.SubHeader;
           return about;
         });
-        _abouts = action.abouts;
         AboutStore.emitChange();
         break;
     }

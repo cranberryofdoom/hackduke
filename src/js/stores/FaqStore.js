@@ -1,13 +1,9 @@
-import Dispatcher from '../dispatcher/Dispatcher';
+import Dispatcher from '../dispatchers/Dispatcher';
 import Constants from '../constants/Constants';
 import BaseStore from './BaseStore';
 import assign from 'object-assign';
 
 let _faqs = [];
-
-function addItem(faq) {
-  _faqs.push(faq);
-}
 
 const FaqStore = assign({}, BaseStore, {
   getAll() {
@@ -21,7 +17,11 @@ const FaqStore = assign({}, BaseStore, {
 
     switch(action.type) {
       case Constants.ActionTypes.FAQS_RECEIVED:
-        _faqs = payload.action.faqs;
+        _faqs = action.faqs.map(faq => {
+          faq.question = faq.fields.Question;
+          faq.answer = faq.fields.Answer;
+          return faq;
+        });
         FaqStore.emitChange();
         break;
     }

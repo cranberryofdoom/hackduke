@@ -10,14 +10,15 @@ export default {
     ROUTE_CHANGED: null,
 
     // Semester
-    SEMESTERS_RECIEVED: null,
-    SEMESTER_RECIEVED: null,
+    SEMESTERS_RECEIVED: null,
+    SEMESTER_RECEIVED: null,
 
     // FAQs
+    FAQS_GET: null,
     FAQS_RECEIVED: null,
 
     // Abouts
-    ABOUTS_RECIEVED: null,
+    ABOUTS_RECEIVED: null,
     ABOUTS_GET: null
   }),
 

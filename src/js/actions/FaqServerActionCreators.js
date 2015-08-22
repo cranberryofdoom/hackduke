@@ -4,7 +4,7 @@ import Constants from '../constants/Constants';
 export default {
   receiveFaqsSuccess(payload) {
     Dispatcher.handleServerAction({
-      type: Constants.ActionTypes.FAQS_RECIEVED,
+      type: Constants.ActionTypes.FAQS_RECEIVED,
       faqs: payload
     });
   },
