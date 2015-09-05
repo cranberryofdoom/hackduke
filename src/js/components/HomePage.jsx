@@ -8,7 +8,6 @@ import FaqActionCreators from '../actions/FaqActionCreators';
 import FaqStore from '../stores/FaqStore';
 import Marked from 'marked';
 
-
 let HomePage = React.createClass({
 
   mixins: [BasicStoreMixin(AboutStore, FaqStore)],
@@ -48,13 +47,15 @@ let HomePage = React.createClass({
         </div>
       )
     });
-
+    
     let faqs = this.state.faqs.map((faq, i) => {
       let rawMarkup = Marked(faq.answer.toString(), {sanitize: true});
       return (
-        <div className="faq" key={i}>
-          <h3>{faq.question}</h3>
-          <span dangerouslySetInnerHTML={{__html: rawMarkup}} />
+        <div className="faq-wrapper" key={i}>
+          <div className="faq">
+            <h3>{faq.question}</h3>
+            <span dangerouslySetInnerHTML={{__html: rawMarkup}} />
+          </div>
         </div>
       );
     });
@@ -72,7 +73,9 @@ let HomePage = React.createClass({
       <section className="faqs">
         <div className="panel">
           <h1>FAQs</h1>
-          {faqs}
+          <div className="faqs-wrapper">
+            {faqs}
+          </div>
         </div>
       </section>
     );

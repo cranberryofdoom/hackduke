@@ -6,7 +6,7 @@ import RouterActionCreators from './actions/RouterActionCreators.jsx';
 
 RouterContainer.set(Router.create({routes}));
 
-Router.run(routes, function(Handler, state) {
+Router.run(routes, Router.HistoryLocation, function(Handler, state) {
   RouterActionCreators.changeRoute({state});
   React.render(<Handler />, document.getElementById('app'));
 });

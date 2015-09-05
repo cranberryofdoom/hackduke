@@ -1,6 +1,9 @@
+import BasicStoreMixin from '../mixins/BasicStoreMixin';
+import Nav from './Nav.jsx';
 import React, {PropTypes} from 'react';
 import Router from 'react-router';
-import Nav from './Nav.jsx';
+import SemesterActionCreators from '../actions/SemesterActionCreators';
+import SemesterStore from '../stores/SemesterStore';
 
 const RouteHandler = Router.RouteHandler;
 
@@ -10,10 +13,10 @@ let App = React.createClass({
     router: React.PropTypes.func
   },
 
-  getDefaultProps() {
-    return {
-      tasks: []
-    };
+  componentWillMount() {
+    SemesterActionCreators.getSemesters({
+      route: this.context.router.getCurrentRoutes()[1].path
+    });
   },
 
   getHandlerKey: function () {

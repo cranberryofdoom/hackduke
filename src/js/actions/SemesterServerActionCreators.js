@@ -2,17 +2,11 @@ import Dispatcher from '../dispatchers/Dispatcher';
 import Constants from '../constants/Constants';
 
 export default {
-  receiveSemestersSuccess(payload) {
+  receiveSemestersSuccess(payload, route) {
     Dispatcher.handleServerAction({
-      type: Constants.ActionTypes.SEMESTERS_RECIEVED,
-      semesters: payload
-    });
-  },
-
-  receiveSemesterSuccess() {
-    Dispatcher.handleServerAction({
-      type: Constants.ActionTypes.SEMESTER_RECIEVED,
-      semester: payload
+      type: Constants.ActionTypes.SEMESTERS_RECEIVED,
+      semesters: payload,
+      route: route
     });
   }
 };

@@ -33,6 +33,7 @@
     .blurb {
       width: 50%;
       display: inline-block;
+      padding: $base-unit;
     }
 
     img {
@@ -42,9 +43,16 @@
 
   .faqs {
 
-    .faq {
-      display: inline-block;
-      width: 33%;
+    .faqs-wrapper {
+      @include flex();
+      @include flex-flow(row, wrap);
+
+      .faq-wrapper {
+        @include flex-basis(33.33%);
+        max-width: 33.33%;
+        padding: $base-unit;
+        box-sizing: border-box;
+      }
     }
   }
 }

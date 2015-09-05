@@ -15,14 +15,14 @@ const CORSToken = 'forceInsecureCrossDomain=ALLOW_ANY_DOMAIN';
 let Api = {};
 
 Api.Semester = {
-  getAll(){
+  getAll(payload){
     Request.get(AirtableRoot + '/' + AppID + '/Semesters/?' + CORSToken + '&' + APIKey)
     .end(function(err, res) {
       err = err || (res && res.error);
       if (err) {
         SemesterServerActionCreators.recieveError(err);
       } else {
-        SemesterServerActionCreators.receiveSemestersSuccess(res.body.records);
+        SemesterServerActionCreators.receiveSemestersSuccess(res.body.records, payload.route);
       }
     });
   },

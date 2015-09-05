@@ -1,15 +1,19 @@
 var dest = './dist';
 var src = './src';
 var gutil = require('gulp-util');
+var history = require('connect-history-api-fallback');
 
 module.exports = {
   server: {
     settings: {
-      root: dest,
+      root:  dest,
       host: 'localhost',
       port: 8080,
       livereload: {
-        port: 35929
+        port: 35729
+      },
+      middleware: function(connect, opt) {
+        return [ history() ];
       }
     }
   },

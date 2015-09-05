@@ -45,6 +45,14 @@
   flex-grow: $grow;
 }
 
+@mixin flex-basis($amount) {
+  -webkit-box-flex-basis: $amount;
+  -moz-box-flex-basis: $amount;
+  -ms-flex-basis: $amount;
+  -webkit-flex-basis: $amount;
+  flex-basis: $amount;
+}
+
 @mixin justify-content($alignment) {
   -webkit-box-justify-content: $alignment;
   -moz-box-justify-content: $alignment;
