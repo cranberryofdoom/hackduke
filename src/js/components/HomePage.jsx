@@ -7,7 +7,6 @@ import classNames from 'classnames';
 import FaqActionCreators from '../actions/FaqActionCreators';
 import FaqStore from '../stores/FaqStore';
 import Marked from 'marked';
-
 let HomePage = React.createClass({
 
   mixins: [BasicStoreMixin(AboutStore, FaqStore)],
@@ -23,7 +22,7 @@ let HomePage = React.createClass({
 
   getStateFromStore() {
     return {
-      faqs: FaqStore.getAll().faqs,
+      faqs: FaqStore.getAllBySemester(this.props.semester).faqs,
       abouts: AboutStore.getAll().abouts
     }
   },
@@ -47,7 +46,9 @@ let HomePage = React.createClass({
         </div>
       )
     });
-    
+
+
+
     let faqs = this.state.faqs.map((faq, i) => {
       let rawMarkup = Marked(faq.answer.toString(), {sanitize: true});
       return (

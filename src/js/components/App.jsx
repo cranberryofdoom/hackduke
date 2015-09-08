@@ -13,6 +13,14 @@ let App = React.createClass({
     router: React.PropTypes.func
   },
 
+  mixins: [BasicStoreMixin(SemesterStore)],
+
+  getStateFromStore() {
+    return {
+      semester: SemesterStore.getSemester().semester
+    };
+  },
+
   componentWillMount() {
     SemesterActionCreators.getSemesters({
       route: this.context.router.getCurrentRoutes()[1].path
@@ -34,7 +42,7 @@ let App = React.createClass({
       <div id="page">
         <Nav/>
         <div className="content">
-          <RouteHandler key={this.getHandlerKey()}/>
+          <RouteHandler key={this.getHandlerKey()} semester={this.state.semester.id}/>
         </div>
       </div>
     );

@@ -25,6 +25,7 @@ const AboutStore = assign({}, BaseStore, {
           about.imageUrl = about.fields.Image[0].url;
           about.header = about.fields.Header;
           about.subHeader = about.fields.SubHeader;
+          about.semesters = about.fields.Semesters;
           return about;
         });
         AboutStore.emitChange();

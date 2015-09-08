@@ -22,6 +22,7 @@ Api.Semester = {
       if (err) {
         SemesterServerActionCreators.recieveError(err);
       } else {
+        console.log(payload.route);
         SemesterServerActionCreators.receiveSemestersSuccess(res.body.records, payload.route);
       }
     });

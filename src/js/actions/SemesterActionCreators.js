@@ -5,6 +5,7 @@ import Airtable from '../services/Airtable';
 export default {
 
   getSemesters(payload) {
+    console.log(payload);
     Dispatcher.handleViewAction({
       type: Constants.ActionTypes.SEMESTERS_GET,
       route: payload.route
