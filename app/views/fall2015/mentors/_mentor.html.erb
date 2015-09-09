@@ -1,0 +1,28 @@
+<div class="col-lg-4 col-md-6 col-sm-6">
+	<% if Partner.exists?(mentor.partner) %>
+		<% if mentor.image_url == ""
+	 %>
+		<img class="profile-img" src="http://placekitten.com/g/300/300">
+		<% else %>
+		<img class="profile-img" src="mentors/<%= mentor.image_url %>">
+		<% end %>
+		<h3 class="text-center"><%= mentor.name %></h3>
+		<a href="<%= mentor.partner.link_url %>"><img class="sponsor-img-small image-center" src="partners/<%= mentor.partner.image_url %>"></a>
+	<% elsif Sponsor.exists?(mentor.sponsor) %>
+		<% if mentor.image_url == "" %>
+		<img class="profile-img" src="http://placekitten.com/g/300/300">
+		<% else %>
+		<img class="profile-img" src="mentors/<%= mentor.image_url %>">
+		<% end %>
+		<h3 class="text-center"><%= mentor.name %></h3>
+		<a href="<%= mentor.sponsor.link_url %>"><img class="sponsor-img-small image-center" src="sponsors/<%= mentor.sponsor.image_url %>"></a>
+	<% else %>
+		<% if mentor.image_url == "" %>
+		<img class="profile-img" src="http://placekitten.com/g/300/300">
+		<% else %>
+		<img class="profile-img" src="mentors/<%= mentor.image_url %>">
+		<% end %>
+		<h3 class="text-center"><%= mentor.name %></h3>
+	<% end %>
+
+</div>

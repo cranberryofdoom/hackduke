@@ -1,0 +1,98 @@
+<div ng-app="hackDukeMentorApp" class="frame-light">
+  <div  ng-controller="mentorApplyCtrl" class="container content">
+    <h1>HackDuke Mentors Form</h1>
+    <div>
+      <form class="form-horizontal" name="applyFormObject.hackDukeMentorForm" novalidate>
+        <div class="form-group">
+          <label class="col-sm-2 control-label" for="name">Name<span class="text-danger">*</span><span class="text-danger" ng-show="applyFormObject.hackDukeMentorForm.nameInput.$invalid && showError">Required</span></label>
+          <div class="col-sm-10">
+            <input class="form-control" name="nameInput" ng-model="applyForm.name" type="text" placeholder="Your name" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label" for="email">Email<span class="text-danger">*</span><span class="text-danger" ng-show="applyFormObject.hackDukeMentorForm.emailInput.$invalid && showError">Required</span></label>
+          <div class="col-sm-10">
+            <input class="form-control" name="emailInput" ng-model="applyForm.email" type="email" placeholder="Your email" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label" for="name">Company<span class="text-danger">*</span><span class="text-danger" ng-show="applyFormObject.hackDukeMentorForm.companyInput.$invalid && showError">Required</span></label>
+          <div class="col-sm-10">
+            <input class="form-control" name="companyInput" ng-model="applyForm.company" type="text" placeholder="Your company" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label" for="name">Contact Number</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="companyInput" ng-model="applyForm.phone" type="text" placeholder="Your contact number">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label" for="division">
+            Which parts of HackDuke are you interested in?
+            <span class="text-danger">*</span>
+            <div>
+              <span class="text-danger" ng-show="noCheckedBox() && showError">Please select at least one option</span>
+            </div>
+          </label>
+          <div class="col-sm-10">
+            <label class="checkbox-inline" for="health">
+              <input id="health" ng-model="applyForm.Health" type="checkbox" value="">
+              Health
+            </label>
+
+            <label class="checkbox-inline" for="education">
+              <input id="education" ng-model="applyForm.Education" type="checkbox" value="">
+              Education
+            </label>
+            <label class="checkbox-inline" for="inequality">
+              <input id="inequality" ng-model="applyForm.Inequality" type="checkbox" value="">
+              Inequality
+            </label>
+            <label class="checkbox-inline" for="energy">
+              <input id="energy" ng-model="applyForm.Energy" type="checkbox" value="">
+              Energy & Environment
+            </label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label" for="newbie">
+            Are you interested in mentoring first time hackathon participants?
+          </label>
+          <div class="col-sm-10">
+            <label class="checkbox-inline" for="newbie">
+              <input id="newbie" ng-model="applyForm.help" type="checkbox" value="Yes">
+              Yes
+            </label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label" for="techfocus">Tech Focus</label>
+          <div class="col-sm-10">
+            <textarea class="form-control" ng-model="applyForm.techfocus"></textarea>
+            <p class="help-block">E.g. Web Development / iOS Development / Hardware</p>  
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label" for="tshirt">T-shirt size
+            <span class="text-danger">*</span>
+            <span class="text-danger" ng-show="applyFormObject.hackDukeForm.tshirt.$invalid && showError">Required</span>
+          </label>
+          <div class="col-sm-10">
+            <select class="form-control" name="tshirt" data-placeholder="Your class" ng-model="applyForm.tshirt" id="tshirt" required>
+              <option value=""></option>
+              <option value="S">S</option>
+              <option value="M">M</option>
+              <option value="L">L</option>
+              <option value="XL">XL</option>
+            </select>
+          </div>
+        </div>
+        <div class="pull-right">
+          <button ng-click="submit()" class="btn btn-default">Submit</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
