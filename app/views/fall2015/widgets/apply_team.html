@@ -1,0 +1,139 @@
+<div ng-app="hackDukeApp" class="frame-light">
+  <div  ng-controller="teamApplyCtrl" class="container content">
+    <h1>HackDuke New Members Application</h1>
+    <h3 class="text-center">Interested in getting involved with HackDuke?</h3>
+    <div>
+      <form class="form-horizontal">
+        <div class="form-group">
+          <label class="col-sm-2 control-label" for="signupType">I want to</label>
+          <div class="col-sm-10">
+            <select class="form-control" name="signupType" ng-change="revertError()" ng-model="signup.classification">
+              <option value=""></option>
+              <option value="Participant">Participate in HackDuke!</option>
+              <option value="Organizer">Organize HackDuke!</option>
+            </select>
+          </div>
+        </div>
+      </form>
+      
+      <form ng-if="signup.classification === 'Organizer'" class="form-horizontal" role="form" name="applyFormObject.hackDukeForm" novalidate>
+        <div class="form-group">
+          <label class="col-sm-2 control-label" for="name">Name<span class="text-danger">*</span><span class="text-danger" ng-show="applyFormObject.hackDukeForm.nameInput.$invalid && showError">Required</span></label>
+          <div class="col-sm-10">
+            <input class="form-control" name="nameInput" ng-model="applyForm.name" type="text" placeholder="Your name" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label" for="netId">netID<span class="text-danger">*</span>
+            <span class="text-danger" ng-show="applyFormObject.hackDukeForm.netId.$invalid && showError">Required</span>
+          </label>
+          <div class="col-sm-10">
+            <input class="form-control" name="netId" ng-model="applyForm.netId" type="text" placeholder="Your netid" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label" for="emailInput">Non-Duke Email
+            <span class="text-danger" ng-show="applyFormObject.hackDukeForm.emailInput.$invalid && showError">Not valid email!</span>
+          </label>
+          <div class="col-sm-10">
+            <input class="form-control" ng-model-onblur id="emailInput" class="apply-form" name="emailInput" ng-model="applyForm.email" type="email" placeholder="A non-duke email">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label" for="phoneNumber">Cell Phone Number</label>
+          <div class="col-sm-10">
+            <input class="form-control" id="phoneNumber" ng-model="applyForm.phoneNumber" placeholder="Your Phone Number" type="text">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label" for="gradYear">Graduation Year
+            <span class="text-danger">*</span>
+            <span class="text-danger" ng-show="applyFormObject.hackDukeForm.graduationYear.$invalid && showError">Required</span>
+          </label>
+          <div class="col-sm-10">
+            <select class="form-control" name="graduationYear" data-placeholder="Your class" ng-model="applyForm.graduationYear" id="gradYear" required>
+              <option value=""></option>
+              <option value="2015">2015</option>
+              <option value="2016">2016</option>
+              <option value="2017">2017</option>
+              <option value="2018">2018</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label" for="experience">Hackathon Experience</label>
+          <div class="col-sm-10">
+            <textarea class="form-control" ng-model="applyForm.experience"></textarea>
+            <p class="help-block">If you've been to hackathons previously, where have you been and what did you build? Include links to these projects if possible.</p>  
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label" for="projects">Projects &amp; Leadership</label>
+          <div class="col-sm-10">
+            <textarea class="form-control" ng-model="applyForm.projects"></textarea>
+            <p class="help-block">Tell us about projects and experiences (in and out of Duke) that you are proud of.</p>  
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label" for="division">
+            Which parts of HackDuke are you interested in?
+            <span class="text-danger">*</span>
+            <div>
+              <span class="text-danger" ng-show="noCheckedBox() && showError">Please select at least one option</span>
+            </div>
+          </label>
+          <div class="col-sm-10">
+            <label class="checkbox-inline" for="marketing">
+              <input id="marketing" ng-model="applyForm.marketing" type="checkbox" value="">
+              Marketing
+            </label>
+
+            <label class="checkbox-inline" for="logistics">
+              <input id="logistics" ng-model="applyForm.logistics" type="checkbox" value="">
+              Logistics
+            </label>
+            <label class="checkbox-inline" for="applications">
+              <input id="applications" ng-model="applyForm.applications" type="checkbox" value="">
+              Applications
+            </label>
+            <label class="checkbox-inline" for="sponsorship">
+              <input id="sponsorship" ng-model="applyForm.sponsorship" type="checkbox" value="">
+              Sponsorship
+            </label>
+            <label class="checkbox-inline" for="programmes">
+              <input id="programmes" ng-model="applyForm.programmes" type="checkbox" value="">
+              Programs
+            </label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label" for="division">Your ideas for HackDuke</label>
+          <div class="col-sm-10">
+            <textarea class="form-control" ng-model="applyForm.ideas"></textarea>
+            <p class="help-block">If you have any ideas on improving hackDuke as an organization or on how we can create a better hackathon experience, we'd love to hear them!</p>  
+          </div>
+        </div>
+        <div class="pull-right">
+          <button ng-click="submit()" class="btn btn-default">Submit</button>
+        </div>
+      </form>
+      <form class="form-horizontal" ng-if="signup.classification === 'Participant'" name="applyFormObject.hackDukeParticipateForm" novalidate>
+        <div class="form-group">
+          <label class="col-sm-2 control-label" for="name">Name<span class="text-danger">*</span><span class="text-danger" ng-show="applyFormObject.hackDukeParticipateForm.nameInput.$invalid && showError">Required</span></label>
+          <div class="col-sm-10">
+            <input class="form-control" name="nameInput" ng-model="participateForm.name" type="text" placeholder="Your name" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label" for="email">Email<span class="text-danger">*</span><span class="text-danger" ng-show="applyFormObject.hackDukeParticipateForm.emailInput.$invalid && showError">Required</span></label>
+          <div class="col-sm-10">
+            <input class="form-control" name="emailInput" ng-model="participateForm.email" type="email" placeholder="Your email" required>
+          </div>
+        </div>
+        <div class="pull-right">
+          <button ng-click="submitParticipant()" class="btn btn-default">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

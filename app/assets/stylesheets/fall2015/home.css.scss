@@ -1,0 +1,170 @@
+#home {
+	height: 100%;
+}
+
+#signup-container {
+	text-align: center;
+	position: relative;
+}
+
+#home-badge {
+	img {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		display: block;
+		margin: auto;
+		width: 175px;
+	}
+}
+
+#profx {
+	img {
+		display: none;
+		position: absolute;
+		bottom: 0;
+		margin: 20px 40px;
+		width: 150px;
+	}
+}
+
+#wolverine {
+	img {
+		margin: 0 auto;
+		display: block;
+		width: 300px;
+	}
+}
+
+#kenan {
+	padding-bottom: 0;
+}
+
+#register {
+	p {
+		display: none;
+		padding: 0;
+		margin: 20px 0 0 0;
+	}
+	h3 {
+		font-weight: 900;
+		font-size: 16px;
+		text-transform: uppercase;
+		margin: 10px 0;
+		color: $yellow;
+	}
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	margin: 40px;
+}
+
+.arrow-down {
+	display: none;
+	width: 0; 
+	height: 0; 
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	border-top: 20px solid white;
+}
+
+.cta-3 {
+	text-align: center;
+	font-weight: 500;
+	font-size: 14px;
+	width: 110px;
+	background-color: $blue;
+	padding: 8px 10px;
+	color: $yellow;
+	position: relative;
+	border-radius: 0;
+	display: inline-block;
+	margin: 10px auto;
+	&:hover {
+		background-color: lighten($blue, 10%);
+		color: lighten($yellow, 10%);
+		text-decoration: none;
+	}
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) and (min-height: 768px) {
+	#home-badge {
+		img {
+			width: 300px;
+		}
+	}
+	#register {
+		.cta-3 {
+			margin: 10px;
+		}
+	}
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) and (min-height: 768px) { 
+	#profx {
+		img {
+			display: block;
+			width: 250px;
+		}
+	}
+	#register {
+		p {
+			text-align: center;
+			display: block;
+		}
+		h3 {
+			color: $charcoal;
+		}
+		.cta-3 {
+			margin: 5px;
+		}
+		#signup-container {
+			padding: 10px 20px 20px 20px;
+		}
+		background-color: white;
+		width: 200px;
+		border-radius: 10px;
+		bottom: 350px;
+		.btn {
+			margin-top: 10px;
+		}
+		.arrow-down {
+			display: block;
+			position: absolute;
+			left: 130px;
+		}
+	}
+	#home-badge {
+		img {
+			width: 400px;
+		}
+	}
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) and (min-height: 768px) {
+	#profx {
+		img {
+			display: block;
+			width: 300px;
+		}
+	}
+	#register {
+		bottom: 400px;
+		width: 300px;
+		h3 {
+			color: $charcoal;
+		}
+		.cta-3 {
+			margin: 5px;
+		}
+		.arrow-down {
+			left: 180px;
+		}
+	}
+}

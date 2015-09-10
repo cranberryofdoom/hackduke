@@ -1,0 +1,16 @@
+<div class="frame-light">
+	<div class="container content">
+		<h1>Meet Our Tech Mentors</h1>
+		<div class="row">
+			<% @mentors.each do |m| %>
+			<% if Sponsor.exists?(m.sponsor) %>
+			<div class="col-sm-4">
+				<img class="profile-img" src="mentors/<%= m.image_url %>">
+				<h3 class="text-center"><%= m.name %></h3>
+				<img class="sponsor-img-small image-center" src="sponsors/<%= m.sponsor.image_url %>">
+			</div>
+			<% end %>
+			<% end %>
+		</div>
+	</div>
+</div>

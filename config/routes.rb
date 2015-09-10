@@ -2,25 +2,45 @@ Hackduke::Application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+  
+   constraints subdomain: 'www' do
+    get '/', to: 'fall2015/static#index'
+    get '/mentor-info', to: 'fall2015/widgets#mentor_info'
+    get '/get-involved', to: 'fall2015/widgets#apply_team'
+    get '/mentor-guidelines', to: 'fall2015/mentors#guidelines'
+    get '/sponsor-guidelines', to: 'fall2015/sponsors#guidelines'
+    get '/our-mentors', to: 'fall2015/mentors#our_mentors'
+    get '/our-experts', to: 'fall2015/mentors#our_experts'
+    get '/prizes', to: 'fall2015/prizes#index'
+    get '/travel', to: 'fall2015/static#travel'
+    get '/speakers', to: 'fall2015/static#speakers'
+    get '/fun', to: 'fall2015/static#fun'
+    get '/courses', to: 'fall2015/courses#index'
+    get '/tech-talks', to: 'fall2015/events#tech_talks'
+    get '/schedule', to: 'fall2015/events#index'
+    
+    resources :organizers, only: [:index], :controller => 'fall2015/organizers'
+   end
 
-  constraints subdomain: 'www' do
-    get '/', to: 'fall2014/static#index'
-    get '/mentor-info', to: 'fall2014/widgets#mentor_info'
-    get '/get-involved', to: 'fall2014/widgets#apply_team'
-    get '/mentor-guidelines', to: 'fall2014/mentors#guidelines'
-    get '/sponsor-guidelines', to: 'fall2014/sponsors#guidelines'
-    get '/our-mentors', to: 'fall2014/mentors#our_mentors'
-    get '/our-experts', to: 'fall2014/mentors#our_experts'
-    get '/prizes', to: 'fall2014/prizes#index'
-    get '/travel', to: 'fall2014/static#travel'
-    get '/speakers', to: 'fall2014/static#speakers'
-    get '/fun', to: 'fall2014/static#fun'
-    get '/courses', to: 'fall2014/courses#index'
-    get '/tech-talks', to: 'fall2014/events#tech_talks'
-    get '/schedule', to: 'fall2014/events#index'
-
+ constraints subdomain: 'fall2014' do
+     get '/', to: 'fall2014/static#index'
+     get '/mentor-info', to: 'fall2014/widgets#mentor_info'
+     get '/get-involved', to: 'fall2014/widgets#apply_team'
+     get '/mentor-guidelines', to: 'fall2014/mentors#guidelines'
+     get '/sponsor-guidelines', to: 'fall2014/sponsors#guidelines'
+     get '/our-mentors', to: 'fall2014/mentors#our_mentors'
+     get '/our-experts', to: 'fall2014/mentors#our_experts'
+     get '/prizes', to: 'fall2014/prizes#index'
+     get '/travel', to: 'fall2014/static#travel'
+     get '/speakers', to: 'fall2014/static#speakers'
+     get '/fun', to: 'fall2014/static#fun'
+     get '/courses', to: 'fall2014/courses#index'
+     get '/tech-talks', to: 'fall2014/events#tech_talks'
+     get '/schedule', to: 'fall2014/events#index'
+     
     resources :organizers, only: [:index], :controller => 'fall2014/organizers'
   end
+ 
 
   constraints subdomain: 'spring2014' do
     namespace :spring2014, path: '/' do
