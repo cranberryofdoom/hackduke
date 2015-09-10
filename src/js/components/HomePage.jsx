@@ -23,7 +23,7 @@ let HomePage = React.createClass({
   getStateFromStore() {
     return {
       faqs: FaqStore.getAllBySemester(this.props.semester).faqs,
-      abouts: AboutStore.getAll().abouts
+      abouts: AboutStore.getAllBySemester(this.props.semester).abouts
     }
   },
 

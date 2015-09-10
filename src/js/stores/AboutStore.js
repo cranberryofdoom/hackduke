@@ -2,6 +2,7 @@ import Dispatcher from '../dispatchers/Dispatcher';
 import Constants from '../constants/Constants';
 import BaseStore from './BaseStore';
 import assign from 'object-assign';
+import utils from '../utils/index';
 
 let _abouts = [{
   imageUrl: null,
@@ -14,6 +15,12 @@ const AboutStore = assign({}, BaseStore, {
     return {
       abouts: _abouts
     };
+  },
+
+  getAllBySemester(semester) {
+    return {
+      abouts: utils.filterForSemester(_abouts, semester)
+    }
   },
 
   dispatcherIndex: Dispatcher.register(function(payload) {
