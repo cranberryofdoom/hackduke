@@ -2,6 +2,10 @@
 	height: 100%;
 }
 
+#mlh-trust-badge {
+	display: none;
+}
+
 #signup-container {
 	text-align: center;
 	position: relative;
@@ -20,7 +24,7 @@
 	}
 }
 
-#profx {
+#baby-kitty {
 	img {
 		display: none;
 		position: absolute;
@@ -64,8 +68,8 @@
 
 .arrow-down {
 	display: none;
-	width: 0; 
-	height: 0; 
+	width: 0;
+	height: 0;
 	border-left: 20px solid transparent;
 	border-right: 20px solid transparent;
 	border-top: 20px solid white;
@@ -92,6 +96,10 @@
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) and (min-height: 768px) {
+	#mlh-trust-badge {
+		display: none;
+	}
+
 	#home-badge {
 		img {
 			width: 300px;
@@ -105,14 +113,23 @@
 }
 
 /* Medium devices (desktops, 992px and up) */
-@media (min-width: 992px) and (min-height: 768px) { 
-	#profx {
+@media (min-width: 992px) and (min-height: 768px) {
+	#mlh-trust-badge {
+		display: none;
+	}
+
+	#baby-kitty {
 		img {
 			display: block;
 			width: 250px;
 		}
 	}
 	#register {
+		background-color: white;
+		width: 200px;
+		border-radius: 10px;
+		bottom: 350px;
+
 		p {
 			text-align: center;
 			display: block;
@@ -124,12 +141,8 @@
 			margin: 5px;
 		}
 		#signup-container {
-			padding: 10px 20px 20px 20px;
+			padding: 10px 20px;
 		}
-		background-color: white;
-		width: 200px;
-		border-radius: 10px;
-		bottom: 350px;
 		.btn {
 			margin-top: 10px;
 		}
@@ -148,14 +161,26 @@
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) and (min-height: 768px) {
-	#profx {
+
+	#mlh-trust-badge {
+		position:fixed;
+		top:0;
+		right:50px;
+		max-width:100px;
+		width:10%;
+		min-width: 60px;
+		display:block;
+		z-index:10000;
+	}
+
+	#baby-kitty {
 		img {
 			display: block;
 			width: 300px;
 		}
 	}
 	#register {
-		bottom: 400px;
+		bottom: 300px;
 		width: 300px;
 		h3 {
 			color: $charcoal;
@@ -164,7 +189,7 @@
 			margin: 5px;
 		}
 		.arrow-down {
-			left: 180px;
+			left: 80px;
 		}
 	}
 }

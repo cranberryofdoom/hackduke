@@ -1,6 +1,7 @@
 <div class="frame-light">
 	<div class="container content">
 		<h1>Tech Talks</h1>
+		<% if @events == nil %>
 		<div class="row text-center">
 			<% @events.each do |c| %>
 			<div class="col-xs-12">
@@ -73,5 +74,6 @@
 			</div>
 			<% end %>
 		</div>
+		<% end %>
 	</div>
 </div>

@@ -1,6 +1,7 @@
 <div class="frame-light">
   <div class="container content">
     <h1>Crash Courses</h1>
+    <% if @courses == nil %>
     <div class="row text-center">
       <% @courses.each do |c| %>
       <div class="col-sm-6">
@@ -34,5 +35,8 @@
       </div>
       <% end %>
     </div>
+    <% else %>
+    <p>Check back later for crash courses!</p>
+    <% end %>
   </div>
 </div>

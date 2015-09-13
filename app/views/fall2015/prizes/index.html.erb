@@ -19,24 +19,13 @@
       <% end %>
       <% end %>
     </div>
-    <!-- <div class="row">
-      <p class="text-center"><strong>Can't think of anyone to donate to? Here are some non-profits we think are awesome and are going to be here this weekend!</strong></p>
-      <% @prizes.each do |p| %>
-      <% if p.api == false %>
-      <div class="col-md-3">
-        <% p.partners.each do |pp| %>
-        <a href="<%= pp.link_url %>"><img class="image-center partner-img" src="partners/<%= pp.image_url %>"></a>
-        <% end %>
-      </div>
-      <% end %>
-      <% end %>
-    </div> -->
     <div class="row">
       <div class="text-center">
         <h2 class="banner-header">Novice Prize Track</h2>
       </div>
       <p class="container-small">There will be a prize for those who are new to programming or attending a hackathon for the first time. The team or individual that creates the best hack that addresses any of the tracks of impact above <strong>and</strong>  meet the requirements for being a novice will be awarded <strong>$250</strong> to donate to a non-profit of their choice. </p>
     </div>
+    <% if @prizes == nil %>
     <div class="row">
       <div class="text-center">
         <h2 class="banner-header">Company Sponsored Prizes</h2>
@@ -53,5 +42,6 @@
       <% end %>
       <% end %>
     </div>
+    <% end %>
   </div>
 </div>
