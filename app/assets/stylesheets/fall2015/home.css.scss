@@ -303,17 +303,46 @@
 			width: 300px;
 		}
 	}
-	#register {
-		bottom: 300px;
-		width: 300px;
+	#signup-container {
+		text-align: center;
+		position: relative;
+	}
+	#finalregister {
+		p {
+			display: none;
+			padding: 0;
+			margin: 20px 0 0 0;
+		}
 		h3 {
+			font-weight: 900;
+			font-size: 25px;
+			text-transform: uppercase;
+			margin: 10px;
 			color: $yellow;
 		}
-		.cta-3 {
-			margin: 5px;
-		}
-		.arrow-down {
-			left: 80px;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		margin: 40px;
+	}
+
+	.cta-3 {
+		text-align: center;
+		font-weight: 500;
+		font-size: 20px;
+		width: 110px;
+		background-color: $blue;
+		padding: 8px 10px;
+		color: $yellow;
+		position: relative;
+		border-radius: 0;
+		display: inline-block;
+		margin: 10px auto;
+		&:hover {
+			background-color: lighten($blue, 10%);
+			color: lighten($yellow, 10%);
+			text-decoration: none;
 		}
 	}
 }
