@@ -3,7 +3,13 @@ Hackduke::Application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
- constraints subdomain: 'www' do
+ module DomainConstraint
+   def self.matches? request
+     !request.subdomain.present? || request.subdomain == 'www'
+   end
+ end
+
+ constraints DomainConstraint do
   get '/', to: 'fall2015/static#index'
   get '/mentor-info', to: 'fall2015/widgets#mentor_info'
   get '/get-involved', to: 'fall2015/widgets#apply_team'
@@ -40,7 +46,6 @@ Hackduke::Application.routes.draw do
 
     resources :organizers, only: [:index], :controller => 'fall2014/organizers'
   end
-
 
   constraints subdomain: 'spring2014' do
     namespace :spring2014, path: '/' do
