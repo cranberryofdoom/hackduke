@@ -102,7 +102,7 @@ angular.module('hackDukeMentorApp')
                         callerScope.applyForm.techfocus = '';
                         callerScope.data = {};
                     }, function() {
-                        modalscope.modalInfo.info = 'Success!';
+                        modalscope.modalInfo.info = 'Unfortunately there has been an error :(';
                         $('#savingOrganizer').click();
                         callerScope.tracks.forEach(function(track) {
                             callerScope.applyForm[track] = false;
