@@ -13,7 +13,7 @@ angular.module('hackDukeMentorApp')
         this.saveData = function(data) {
             var request;
             return request = $.ajax({
-                url: 'https://script.google.com/macros/s/AKfycbwu6i4gi9Sx7teTtDN0B33BxLDq_b9mgde_9dv2yv1y3eYQrmI/exec',
+                url: 'https://script.google.com/macros/s/AKfycbybhPs_sdiEvJBCJ5eLDMFbMLSSaoD0mhKK5X1cB7CpRED2GrM/exec',
                 type: 'post',
                 data: data
             });
